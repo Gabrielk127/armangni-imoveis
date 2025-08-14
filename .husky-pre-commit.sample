@@ -1,0 +1,2 @@
+# Exemplo de script para pre-commit caso precise recriar manualmente
+# npx husky add .husky/pre-commit "npm run pre-commit-hook"

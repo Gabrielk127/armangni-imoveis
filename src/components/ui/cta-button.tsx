@@ -4,8 +4,7 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
-interface CTAButtonProps
-  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "children"> {
+interface CTAButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "children"> {
   children: React.ReactNode;
   variant?: "default" | "outline" | "secondary";
   size?: "default" | "sm" | "lg";

@@ -54,9 +54,7 @@ export default function LocationSection() {
             <div>
               <div className="flex items-center mb-3">
                 <MapPin className="w-5 h-5 text-emerald-600 mr-2" />
-                <h3 className="text-xl font-semibold text-gray-900">
-                  Endereço
-                </h3>
+                <h3 className="text-xl font-semibold text-gray-900">Endereço</h3>
               </div>
               <p className="text-gray-600">
                 Rua das Flores, 123
@@ -85,18 +83,14 @@ export default function LocationSection() {
                       <place.icon className="w-5 h-5 text-emerald-600 mr-3" />
                       <span className="text-gray-700">{place.name}</span>
                     </div>
-                    <span className="text-sm text-gray-500 font-medium">
-                      {place.distance}
-                    </span>
+                    <span className="text-sm text-gray-500 font-medium">{place.distance}</span>
                   </motion.div>
                 ))}
               </div>
             </div>
 
             <div className="p-4 bg-emerald-50 rounded-lg">
-              <h4 className="font-semibold text-emerald-800 mb-2">
-                Vantagens da Localização
-              </h4>
+              <h4 className="font-semibold text-emerald-800 mb-2">Vantagens da Localização</h4>
               <ul className="text-sm text-emerald-700 space-y-1">
                 <li>• Fácil acesso às principais vias da cidade</li>
                 <li>• Transporte público próximo</li>

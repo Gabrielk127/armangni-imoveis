@@ -62,18 +62,15 @@ export default function CondominiumInfo() {
             viewport={{ once: true }}
             className="flex flex-col justify-center"
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Sobre o Condomínio
-            </h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Sobre o Condomínio</h3>
             <p className="text-gray-600 leading-relaxed mb-4">
-              O Condomínio Residencial Jardins é reconhecido como um dos mais
-              exclusivos de Ibiporã, oferecendo uma infraestrutura completa e
-              serviços de alta qualidade para seus moradores.
+              O Condomínio Residencial Jardins é reconhecido como um dos mais exclusivos de Ibiporã,
+              oferecendo uma infraestrutura completa e serviços de alta qualidade para seus
+              moradores.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              Com apenas 24 lotes, garante privacidade e tranquilidade, além de
-              uma localização estratégica próxima aos principais pontos
-              comerciais e de serviços da cidade.
+              Com apenas 24 lotes, garante privacidade e tranquilidade, além de uma localização
+              estratégica próxima aos principais pontos comerciais e de serviços da cidade.
             </p>
           </motion.div>
         </div>
@@ -90,9 +87,7 @@ export default function CondominiumInfo() {
               className="p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
             >
               <amenity.icon className="w-8 h-8 text-emerald-600 mb-3" />
-              <h4 className="font-semibold text-gray-900 mb-2">
-                {amenity.title}
-              </h4>
+              <h4 className="font-semibold text-gray-900 mb-2">{amenity.title}</h4>
               <p className="text-sm text-gray-600">{amenity.description}</p>
             </motion.div>
           ))}

@@ -45,8 +45,7 @@ export default function VideoSection() {
           className="text-center mt-6"
         >
           <p className="text-gray-600">
-            Assista ao tour completo e descubra todos os ambientes desta
-            propriedade única
+            Assista ao tour completo e descubra todos os ambientes desta propriedade única
           </p>
         </motion.div>
       </div>

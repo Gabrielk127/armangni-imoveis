@@ -37,8 +37,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-lg md:text-xl lg:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto"
         >
-          Luxo, conforto e localização privilegiada em um dos bairros mais
-          valorizados da cidade
+          Luxo, conforto e localização privilegiada em um dos bairros mais valorizados da cidade
         </motion.p>
 
         <motion.div
@@ -60,9 +59,7 @@ export default function HeroSection() {
             size="lg"
             className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 text-lg"
             onClick={() =>
-              document
-                .getElementById("details")
-                ?.scrollIntoView({ behavior: "smooth" })
+              document.getElementById("details")?.scrollIntoView({ behavior: "smooth" })
             }
           >
             Saiba Mais

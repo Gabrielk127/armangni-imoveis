@@ -8,11 +8,7 @@ interface SectionTitleProps {
   className?: string;
 }
 
-export default function SectionTitle({
-  title,
-  subtitle,
-  className = "",
-}: SectionTitleProps) {
+export default function SectionTitle({ title, subtitle, className = "" }: SectionTitleProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -21,13 +17,9 @@ export default function SectionTitle({
       viewport={{ once: true }}
       className={`text-center mb-8 ${className}`}
     >
-      <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
-        {title}
-      </h2>
+      <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">{title}</h2>
       {subtitle && (
-        <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto">
-          {subtitle}
-        </p>
+        <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto">{subtitle}</p>
       )}
     </motion.div>
   );

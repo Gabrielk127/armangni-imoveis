@@ -37,9 +37,7 @@ export default function ContactForm() {
     setIsSubmitting(false);
   };
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
@@ -67,8 +65,8 @@ export default function ContactForm() {
             <div>
               <h3 className="text-2xl font-bold mb-6">Fale Conosco</h3>
               <p className="text-gray-300 mb-8">
-                Nossa equipe especializada está pronta para esclarecer todas as
-                suas dúvidas e agendar uma visita personalizada ao imóvel.
+                Nossa equipe especializada está pronta para esclarecer todas as suas dúvidas e
+                agendar uma visita personalizada ao imóvel.
               </p>
             </div>
 
@@ -179,8 +177,8 @@ export default function ContactForm() {
               </CTAButton>
 
               <p className="text-xs text-gray-400 text-center">
-                Ao enviar este formulário, você concorda com nossa política de
-                privacidade e autoriza o contato para apresentação da proposta.
+                Ao enviar este formulário, você concorda com nossa política de privacidade e
+                autoriza o contato para apresentação da proposta.
               </p>
             </form>
           </motion.div>

@@ -53,10 +53,7 @@ export default function PhotoGallery() {
     setCarouselIndex((prev) => (prev - 1 + photos.length) % photos.length);
   };
 
-  const handleDragEnd = (
-    _event: MouseEvent | TouchEvent | PointerEvent,
-    info: PanInfo
-  ) => {
+  const handleDragEnd = (_event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     const threshold = 50;
     if (info.offset.x > threshold) {
       prevCarousel();
@@ -192,9 +189,7 @@ export default function PhotoGallery() {
                 >
                   <Image
                     src={photos[currentIndex].src || "/placeholder.svg"}
-                    alt={`${photos[currentIndex].alt} (${currentIndex + 1} de ${
-                      photos.length
-                    })`}
+                    alt={`${photos[currentIndex].alt} (${currentIndex + 1} de ${photos.length})`}
                     fill
                     priority
                     className="object-contain md:object-cover rounded-lg select-none"

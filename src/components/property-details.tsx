@@ -43,9 +43,7 @@ export default function PropertyDetails() {
               className="text-center p-4 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors"
             >
               <feature.icon className="w-8 h-8 mx-auto mb-2 text-emerald-600" />
-              <p className="font-semibold text-gray-900 text-sm">
-                {feature.value}
-              </p>
+              <p className="font-semibold text-gray-900 text-sm">{feature.value}</p>
               <p className="text-xs text-gray-600">{feature.label}</p>
             </motion.div>
           ))}
@@ -59,19 +57,16 @@ export default function PropertyDetails() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Sobre o Imóvel
-            </h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Sobre o Imóvel</h3>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Esta magnífica residência combina elegância contemporânea com
-              funcionalidade excepcional. Localizada em uma das áreas mais
-              valorizadas de Ibiporã, oferece privacidade e tranquilidade sem
-              abrir mão da proximidade com os principais pontos da cidade.
+              Esta magnífica residência combina elegância contemporânea com funcionalidade
+              excepcional. Localizada em uma das áreas mais valorizadas de Ibiporã, oferece
+              privacidade e tranquilidade sem abrir mão da proximidade com os principais pontos da
+              cidade.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              Cada ambiente foi cuidadosamente planejado para proporcionar
-              conforto e bem-estar, com acabamentos de primeira qualidade e
-              tecnologia integrada em todos os cômodos.
+              Cada ambiente foi cuidadosamente planejado para proporcionar conforto e bem-estar, com
+              acabamentos de primeira qualidade e tecnologia integrada em todos os cômodos.
             </p>
           </motion.div>
 
@@ -81,9 +76,7 @@ export default function PropertyDetails() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Diferenciais
-            </h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Diferenciais</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {amenities.map((amenity, index) => (
                 <motion.div
