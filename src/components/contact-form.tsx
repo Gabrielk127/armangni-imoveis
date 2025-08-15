@@ -45,7 +45,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="py-16 px-4 bg-gray-900 text-white">
+    <section id="contact" className="py-16 px-4 bg-[#262626] text-white">
       <div className="max-w-6xl mx-auto">
         <SectionTitle
           title="Entre em Contato"
@@ -64,7 +64,7 @@ export default function ContactForm() {
           >
             <div>
               <h3 className="text-2xl font-bold mb-6">Fale Conosco</h3>
-              <p className="text-gray-300 mb-8">
+              <p className="text-[#c9ccd0] mb-8">
                 Nossa equipe especializada está pronta para esclarecer todas as suas dúvidas e
                 agendar uma visita personalizada ao imóvel.
               </p>
@@ -72,33 +72,33 @@ export default function ContactForm() {
 
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
-                <Phone className="w-6 h-6 text-emerald-400" />
+                <Phone className="w-6 h-6 text-[#BFB4AA]" />
                 <div>
                   <p className="font-semibold">Telefone</p>
-                  <p className="text-gray-300">(43) 99999-9999</p>
+                  <p className="text-[#c9ccd0]">(43) 99999-9999</p>
                 </div>
               </div>
 
               <div className="flex items-center space-x-4">
-                <Mail className="w-6 h-6 text-emerald-400" />
+                <Mail className="w-6 h-6 text-[#BFB4AA]" />
                 <div>
                   <p className="font-semibold">E-mail</p>
-                  <p className="text-gray-300">contato@imobiliaria.com.br</p>
+                  <p className="text-[#c9ccd0]">contato@imobiliaria.com.br</p>
                 </div>
               </div>
 
               <div className="flex items-center space-x-4">
-                <MessageCircle className="w-6 h-6 text-emerald-400" />
+                <MessageCircle className="w-6 h-6 text-[#BFB4AA]" />
                 <div>
                   <p className="font-semibold">WhatsApp</p>
-                  <p className="text-gray-300">(43) 99999-9999</p>
+                  <p className="text-[#c9ccd0]">(43) 99999-9999</p>
                 </div>
               </div>
             </div>
 
             <div className="pt-6">
               <h4 className="font-semibold mb-3">Horário de Atendimento</h4>
-              <div className="text-gray-300 space-y-1">
+              <div className="text-[#c9ccd0] space-y-1">
                 <p>Segunda a Sexta: 8h às 18h</p>
                 <p>Sábado: 8h às 12h</p>
                 <p>Domingo: Plantão (WhatsApp)</p>
@@ -122,7 +122,7 @@ export default function ContactForm() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="bg-gray-800 border-gray-700 text-white placeholder-gray-400"
+                  className="bg-[#1C1C1C] border-[#1C1C1C] text-white placeholder-[#c9ccd0]"
                 />
               </div>
 
@@ -134,7 +134,7 @@ export default function ContactForm() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="bg-gray-800 border-gray-700 text-white placeholder-gray-400"
+                  className="bg-[#1C1C1C] border-[#1C1C1C] text-white placeholder-[#c9ccd0]"
                 />
               </div>
 
@@ -146,7 +146,7 @@ export default function ContactForm() {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="bg-gray-800 border-gray-700 text-white placeholder-gray-400"
+                  className="bg-[#1C1C1C] border-[#1C1C1C] text-white placeholder-[#c9ccd0]"
                 />
               </div>
 
@@ -157,14 +157,14 @@ export default function ContactForm() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  className="bg-gray-800 border-gray-700 text-white placeholder-gray-400 resize-none"
+                  className="bg-[#1C1C1C] border-[#1C1C1C] text-white placeholder-[#c9ccd0] resize-none"
                 />
               </div>
 
               <CTAButton
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3"
+                className="w-full bg-[#BFB4AA] hover:bg-[#BFB4AA] text-black py-3"
               >
                 {isSubmitting ? (
                   "Enviando..."
@@ -176,7 +176,7 @@ export default function ContactForm() {
                 )}
               </CTAButton>
 
-              <p className="text-xs text-gray-400 text-center">
+              <p className="text-xs text-[#c9ccd0] text-center">
                 Ao enviar este formulário, você concorda com nossa política de privacidade e
                 autoriza o contato para apresentação da proposta.
               </p>

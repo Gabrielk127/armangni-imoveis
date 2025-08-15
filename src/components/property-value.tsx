@@ -11,7 +11,7 @@ export default function PropertyValue() {
   };
 
   return (
-    <section className="py-16 px-4 bg-emerald-50">
+    <section className="py-16 px-4 bg-[#262626]">
       <div className="max-w-4xl mx-auto">
         <SectionTitle
           title="Investimento"
@@ -26,10 +26,10 @@ export default function PropertyValue() {
             viewport={{ once: true }}
             className="inline-block"
           >
-            <span className="text-4xl md:text-5xl lg:text-6xl font-bold text-emerald-600">
+            <span className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#BFB4AA]">
               R$ 850.000
             </span>
-            <p className="text-gray-600 mt-2">Valor à vista</p>
+            <p className="text-[#c9ccd0] mt-2">Valor à vista</p>
           </motion.div>
         </div>
 
@@ -39,11 +39,11 @@ export default function PropertyValue() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="text-center p-6 bg-white rounded-lg shadow-sm"
+            className="text-center p-6 bg-[#1C1C1C] rounded-lg shadow-sm"
           >
-            <CreditCard className="w-8 h-8 mx-auto mb-3 text-emerald-600" />
-            <h4 className="font-semibold text-gray-900 mb-2">Financiamento</h4>
-            <p className="text-sm text-gray-600">
+            <CreditCard className="w-8 h-8 mx-auto mb-3 text-[#BFB4AA]" />
+            <h4 className="font-semibold text-white mb-2">Financiamento</h4>
+            <p className="text-sm text-[#c9ccd0]">
               Aceita financiamento bancário com entrada a partir de 20%
             </p>
           </motion.div>
@@ -53,11 +53,11 @@ export default function PropertyValue() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-center p-6 bg-white rounded-lg shadow-sm"
+            className="text-center p-6 bg-[#1C1C1C] rounded-lg shadow-sm"
           >
-            <Calendar className="w-8 h-8 mx-auto mb-3 text-emerald-600" />
-            <h4 className="font-semibold text-gray-900 mb-2">Parcelamento</h4>
-            <p className="text-sm text-gray-600">
+            <Calendar className="w-8 h-8 mx-auto mb-3 text-[#BFB4AA]" />
+            <h4 className="font-semibold text-white mb-2">Parcelamento</h4>
+            <p className="text-sm text-[#c9ccd0]">
               Possibilidade de parcelamento direto com o proprietário
             </p>
           </motion.div>
@@ -67,11 +67,11 @@ export default function PropertyValue() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-center p-6 bg-white rounded-lg shadow-sm"
+            className="text-center p-6 bg-[#1C1C1C] rounded-lg shadow-sm"
           >
-            <TrendingUp className="w-8 h-8 mx-auto mb-3 text-emerald-600" />
-            <h4 className="font-semibold text-gray-900 mb-2">Valorização</h4>
-            <p className="text-sm text-gray-600">
+            <TrendingUp className="w-8 h-8 mx-auto mb-3 text-[#BFB4AA]" />
+            <h4 className="font-semibold text-white mb-2">Valorização</h4>
+            <p className="text-sm text-[#c9ccd0]">
               Região em constante valorização com alta demanda
             </p>
           </motion.div>
@@ -87,7 +87,7 @@ export default function PropertyValue() {
           <CTAButton
             onClick={scrollToContact}
             size="lg"
-            className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 text-lg"
+            className="bg-[#bebebe] text-black px-8 py-3 text-lg cursor-pointer"
           >
             Solicitar Proposta
           </CTAButton>

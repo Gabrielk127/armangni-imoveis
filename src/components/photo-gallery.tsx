@@ -63,10 +63,11 @@ export default function PhotoGallery() {
   };
 
   return (
-    <section className="py-16 px-4 bg-gray-50">
+    <section className="py-16 px-4 bg-[#1C1C1C]">
       <div className="max-w-6xl mx-auto">
         <SectionTitle
           title="Galeria de Fotos"
+          className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent"
           subtitle="Conheça cada detalhe desta propriedade única"
         />
 

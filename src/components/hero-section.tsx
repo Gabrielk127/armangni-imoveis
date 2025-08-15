@@ -17,7 +17,7 @@ export default function HeroSection() {
           backgroundImage: `url('/house2.png')`,
         }}
       >
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       {/* Content */}
@@ -26,7 +26,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight"
+          className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight text-[#BFB4AA]"
         >
           Casa dos Sonhos em Ibiporã
         </motion.h1>
@@ -49,15 +49,15 @@ export default function HeroSection() {
           <CTAButton
             onClick={scrollToContact}
             size="lg"
-            className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 text-lg"
+            className="bg-[#bebebe] cursor-pointer text-black px-8 py-3 text-lg"
           >
             Entrar em Contato
           </CTAButton>
 
           <CTAButton
-            variant="outline"
+            variant="default"
             size="lg"
-            className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 text-lg"
+            className="text-white cursor-pointer px-8 py-3 text-lg bg-[#4a4949]"
             onClick={() =>
               document.getElementById("details")?.scrollIntoView({ behavior: "smooth" })
             }

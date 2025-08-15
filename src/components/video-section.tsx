@@ -6,7 +6,7 @@ import SectionTitle from "@/components/ui/section-title";
 
 export default function VideoSection() {
   return (
-    <section className="py-16 px-4 bg-white">
+    <section className="py-16 px-4 bg-[#1C1C1C]">
       <div className="max-w-4xl mx-auto">
         <SectionTitle
           title="Tour Virtual"
@@ -18,7 +18,7 @@ export default function VideoSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="relative aspect-video bg-gray-900 rounded-lg overflow-hidden shadow-2xl"
+          className="relative aspect-video bg-[#262626] rounded-lg overflow-hidden shadow-2xl"
         >
           <iframe
             src="https://www.youtube.com/embed/dQw4w9WgXcQ"
@@ -29,7 +29,7 @@ export default function VideoSection() {
           />
 
           {/* Fallback for when iframe is loading */}
-          <div className="absolute inset-0 flex items-center justify-center bg-gray-800">
+          <div className="absolute inset-0 flex items-center justify-center bg-[#262626]">
             <div className="text-center text-white">
               <Play className="w-16 h-16 mx-auto mb-4 opacity-80" />
               <p className="text-lg font-medium">Carregando vídeo...</p>
@@ -44,7 +44,7 @@ export default function VideoSection() {
           viewport={{ once: true }}
           className="text-center mt-6"
         >
-          <p className="text-gray-600">
+          <p className="text-[#c9ccd0]">
             Assista ao tour completo e descubra todos os ambientes desta propriedade única
           </p>
         </motion.div>

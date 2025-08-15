@@ -13,7 +13,7 @@ const nearbyPlaces = [
 
 export default function LocationSection() {
   return (
-    <section className="py-16 px-4 bg-gray-50">
+    <section className="py-16 px-4 bg-[#1C1C1C]">
       <div className="max-w-6xl mx-auto">
         <SectionTitle
           title="Localização Privilegiada"
@@ -54,9 +54,9 @@ export default function LocationSection() {
             <div>
               <div className="flex items-center mb-3">
                 <MapPin className="w-5 h-5 text-emerald-600 mr-2" />
-                <h3 className="text-xl font-semibold text-gray-900">Endereço</h3>
+                <h3 className="text-xl font-semibold text-[#BFB4AA]">Endereço</h3>
               </div>
-              <p className="text-gray-600">
+              <p className="text-[#c9ccd0]">
                 Rua das Flores, 123
                 <br />
                 Condomínio Residencial Jardins
@@ -77,21 +77,21 @@ export default function LocationSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="flex items-center justify-between p-3 bg-white rounded-lg shadow-sm"
+                    className="flex items-center justify-between p-3 bg-[#262626] rounded-lg shadow-sm"
                   >
                     <div className="flex items-center">
-                      <place.icon className="w-5 h-5 text-emerald-600 mr-3" />
-                      <span className="text-gray-700">{place.name}</span>
+                      <place.icon className="w-5 h-5 text-[#BFB4AA] mr-3" />
+                      <span className="text-[#c9ccd0]">{place.name}</span>
                     </div>
-                    <span className="text-sm text-gray-500 font-medium">{place.distance}</span>
+                    <span className="text-sm text-[#c9ccd0] font-medium">{place.distance}</span>
                   </motion.div>
                 ))}
               </div>
             </div>
 
-            <div className="p-4 bg-emerald-50 rounded-lg">
-              <h4 className="font-semibold text-emerald-800 mb-2">Vantagens da Localização</h4>
-              <ul className="text-sm text-emerald-700 space-y-1">
+            <div className="p-4 bg-[#262626] rounded-lg">
+              <h4 className="font-semibold text-[#BFB4AA] mb-2">Vantagens da Localização</h4>
+              <ul className="text-sm text-[#c9ccd0] space-y-1">
                 <li>• Fácil acesso às principais vias da cidade</li>
                 <li>• Transporte público próximo</li>
                 <li>• Área residencial consolidada</li>

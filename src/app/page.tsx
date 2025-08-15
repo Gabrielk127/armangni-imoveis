@@ -9,7 +9,7 @@ import ContactForm from "@/components/contact-form";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-[#1C1C1C]">
       <HeroSection />
       <PhotoGallery />
       <PropertyDetails />

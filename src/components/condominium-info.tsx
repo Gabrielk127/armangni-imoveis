@@ -32,7 +32,7 @@ const amenities = [
 
 export default function CondominiumInfo() {
   return (
-    <section className="py-16 px-4 bg-white">
+    <section className="py-16 px-4 bg-[#1C1C1C]">
       <div className="max-w-6xl mx-auto">
         <SectionTitle
           title="Condomínio Residencial Jardins"
@@ -62,13 +62,13 @@ export default function CondominiumInfo() {
             viewport={{ once: true }}
             className="flex flex-col justify-center"
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Sobre o Condomínio</h3>
-            <p className="text-gray-600 leading-relaxed mb-4">
+            <h3 className="text-2xl font-bold text-[#BFB4AA] mb-4">Sobre o Condomínio</h3>
+            <p className="text-white leading-relaxed mb-4">
               O Condomínio Residencial Jardins é reconhecido como um dos mais exclusivos de Ibiporã,
               oferecendo uma infraestrutura completa e serviços de alta qualidade para seus
               moradores.
             </p>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-white leading-relaxed">
               Com apenas 24 lotes, garante privacidade e tranquilidade, além de uma localização
               estratégica próxima aos principais pontos comerciais e de serviços da cidade.
             </p>
@@ -84,11 +84,11 @@ export default function CondominiumInfo() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+              className="p-6 bg-[#262626] rounded-lg transition-colors"
             >
-              <amenity.icon className="w-8 h-8 text-emerald-600 mb-3" />
-              <h4 className="font-semibold text-gray-900 mb-2">{amenity.title}</h4>
-              <p className="text-sm text-gray-600">{amenity.description}</p>
+              <amenity.icon className="w-8 h-8 text-[#BFB4AA] mb-3" />
+              <h4 className="font-semibold text-white mb-2">{amenity.title}</h4>
+              <p className="text-sm text-[#c9ccd0]">{amenity.description}</p>
             </motion.div>
           ))}
         </div>
