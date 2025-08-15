@@ -45,7 +45,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="py-16 px-4 bg-[#262626] text-white">
+    <section id="contato" className="py-16 px-4 bg-[#262626] text-white">
       <div className="max-w-6xl mx-auto">
         <SectionTitle
           title="Entre em Contato"
@@ -164,7 +164,7 @@ export default function ContactForm() {
               <CTAButton
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[#BFB4AA] hover:bg-[#BFB4AA] text-black py-3"
+                className="w-full bg-[#BFB4AA] hover:bg-[#BFB4AA] text-black py-3 cursor-pointer"
               >
                 {isSubmitting ? (
                   "Enviando..."

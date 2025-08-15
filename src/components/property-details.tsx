@@ -24,7 +24,7 @@ const amenities = [
 
 export default function PropertyDetails() {
   return (
-    <section id="details" className="py-16 px-4 bg-[#1C1C1C]">
+    <section id="imovel" className="py-16 px-4 bg-[#1C1C1C]">
       <div className="max-w-6xl mx-auto">
         <SectionTitle
           title="Detalhes do Imóvel"

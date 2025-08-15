@@ -7,7 +7,7 @@ import CTAButton from "@/components/ui/cta-button";
 
 export default function PropertyValue() {
   const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (

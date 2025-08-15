@@ -6,7 +6,7 @@ import SectionTitle from "@/components/ui/section-title";
 
 export default function VideoSection() {
   return (
-    <section className="py-16 px-4 bg-[#1C1C1C]">
+    <section className="py-16 px-4 bg-[#1C1C1C]" id="video">
       <div className="max-w-4xl mx-auto">
         <SectionTitle
           title="Tour Virtual"

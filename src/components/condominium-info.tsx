@@ -32,7 +32,7 @@ const amenities = [
 
 export default function CondominiumInfo() {
   return (
-    <section className="py-16 px-4 bg-[#1C1C1C]">
+    <section className="py-16 px-4 bg-[#1C1C1C]" id="condominio">
       <div className="max-w-6xl mx-auto">
         <SectionTitle
           title="Condomínio Residencial Jardins"

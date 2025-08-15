@@ -5,11 +5,14 @@ import CTAButton from "@/components/ui/cta-button";
 
 export default function HeroSection() {
   const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      id="inicio"
+    >
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -59,7 +62,7 @@ export default function HeroSection() {
             size="lg"
             className="text-white cursor-pointer px-8 py-3 text-lg bg-[#4a4949]"
             onClick={() =>
-              document.getElementById("details")?.scrollIntoView({ behavior: "smooth" })
+              document.getElementById("imovel")?.scrollIntoView({ behavior: "smooth" })
             }
           >
             Saiba Mais
