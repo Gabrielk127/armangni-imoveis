@@ -9,6 +9,7 @@ import VideoSection from "@/components/video-section";
 import ContactForm from "@/components/contact-form";
 import Header from "@/components/header/header";
 import { useFirstProperty } from "@/hooks/useProperty";
+import FloatingWhatsAppButton from "@/components/floating-whatsapp-button";
 
 export default function Home() {
   const { property, loading, error } = useFirstProperty();
@@ -44,6 +45,7 @@ export default function Home() {
   return (
     <main>
       <Header />
+      <FloatingWhatsAppButton phoneNumber="5543998377239" />
       <div className="min-h-screen bg-[#1C1C1C]">
         <HeroSection title={property?.hero?.title} subtitle={property?.hero?.subtitle} />
         <PhotoGallery />
