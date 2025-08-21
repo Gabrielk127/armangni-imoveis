@@ -4,9 +4,6 @@ import { useState, useEffect } from "react";
 import { Property } from "@/types";
 import { getProperties, getPropertyById } from "@/services/propertyService";
 
-/**
- * Hook para buscar um imóvel específico por ID
- */
 export function useProperty(id?: number) {
   const [property, setProperty] = useState<Property | null>(null);
   const [loading, setLoading] = useState(true);
@@ -38,9 +35,6 @@ export function useProperty(id?: number) {
   return { property, loading, error };
 }
 
-/**
- * Hook para buscar todos os imóveis
- */
 export function useProperties() {
   const [properties, setProperties] = useState<Property[]>([]);
   const [loading, setLoading] = useState(true);
@@ -81,9 +75,6 @@ export function useProperties() {
   return { properties, loading, error, refetch };
 }
 
-/**
- * Hook para buscar o primeiro imóvel disponível (para exibir na landing page)
- */
 export function useFirstProperty() {
   const { properties, loading, error } = useProperties();
   const firstProperty = properties.length > 0 ? properties[0] : null;

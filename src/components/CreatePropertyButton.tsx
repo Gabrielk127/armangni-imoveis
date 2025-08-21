@@ -1,4 +1,4 @@
-"use client"; // ESSENCIAL: Marca este como um Componente de Cliente
+"use client";
 
 import { useState } from "react";
 
@@ -6,21 +6,17 @@ import { useState } from "react";
 import { PropertyData } from "@/types";
 
 export default function CreatePropertyButton() {
-  // Estados para controlar o carregamento e as mensagens de feedback
   const [isLoading, setIsLoading] = useState(false);
   const [statusMessage, setStatusMessage] = useState("");
   const [isError, setIsError] = useState(false);
 
   const handleCreateProperty = async () => {
-    // 1. Inicia o estado de carregamento e limpa mensagens antigas
     setIsLoading(true);
     setStatusMessage("");
     setIsError(false);
 
-    // 2. Os dados do imóvel que queremos enviar (hardcoded para este exemplo)
-    // Em uma aplicação real, isso viria de um formulário.
     const propertyJsonData: PropertyData = {
-      slug: `casa-de-exemplo-${Date.now()}`, // Slug dinâmico para evitar duplicatas
+      slug: `casa-de-exemplo-${Date.now()}`,
       hero: {
         title: "Casa de Exemplo Criada via Botão",
         subtitle: "Um imóvel fantástico gerado automaticamente",
@@ -51,7 +47,6 @@ export default function CreatePropertyButton() {
     };
 
     try {
-      // 3. Faz a chamada 'fetch' para a nossa API Route
       const response = await fetch("/api/properties", {
         method: "POST",
         headers: {
@@ -60,19 +55,14 @@ export default function CreatePropertyButton() {
         body: JSON.stringify(propertyJsonData),
       });
 
-      // Transforma a resposta em JSON
       const result = await response.json();
 
-      // 4. Verifica se a resposta da API foi um erro (status 4xx ou 5xx)
       if (!response.ok) {
-        // Se a API retornou um erro, joga um erro para ser pego pelo 'catch'
         throw new Error(result.message || "Ocorreu um erro na API.");
       }
 
-      // 5. Se tudo deu certo, atualiza a mensagem de status com sucesso
       setStatusMessage(`Sucesso! Imóvel criado com ID: ${result.propertyId}`);
     } catch (error: unknown) {
-      // 6. Se ocorrer qualquer erro (rede, API, etc.), atualiza a mensagem
       setIsError(true);
       const errorMessage =
         error instanceof Error
@@ -81,7 +71,6 @@ export default function CreatePropertyButton() {
       setStatusMessage(errorMessage);
       console.error("Erro ao criar imóvel:", error);
     } finally {
-      // 7. SEMPRE executa isso, independente de sucesso ou erro
       setIsLoading(false);
     }
   };

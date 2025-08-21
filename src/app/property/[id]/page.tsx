@@ -19,13 +19,11 @@ export default async function PropertyPage({ params }: PageProps) {
   const { id } = await params;
   const propertyId = parseInt(id);
 
-  // Verifica se o ID é um número válido
   if (isNaN(propertyId)) {
     notFound();
   }
 
   try {
-    // Busca o imóvel pelo ID
     const property = await getPropertyById(propertyId);
 
     if (!property) {
@@ -70,7 +68,6 @@ export default async function PropertyPage({ params }: PageProps) {
   }
 }
 
-// Função para gerar metadados dinâmicos
 export async function generateMetadata({ params }: PageProps) {
   const { id } = await params;
   const propertyId = parseInt(id);

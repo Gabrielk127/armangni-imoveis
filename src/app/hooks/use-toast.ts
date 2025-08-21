@@ -11,7 +11,6 @@ type ToasterToast = {
   description?: React.ReactNode;
   action?: React.ReactNode;
   variant?: "default" | "destructive";
-  // Propriedades adicionadas para compatibilidade com uso no reducer
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
 };

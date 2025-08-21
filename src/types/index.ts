@@ -29,6 +29,5 @@ export type PropertyData = {
 };
 
 export type Property = PropertyData & {
-  id: string; // ID do documento no Firestore (string)
-  // O campo numérico 'id' será incluído automaticamente no PropertyData quando salvo no Firestore
+  id: string;
 };
