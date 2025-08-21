@@ -4,32 +4,68 @@ import { motion } from "framer-motion";
 import { Home, Bath, Car, Maximize, Users, Waves } from "lucide-react";
 import SectionTitle from "@/components/ui/section-title";
 
-const features = [
-  { icon: Home, label: "Área Total", value: "450m²" },
-  { icon: Maximize, label: "Área Construída", value: "320m²" },
-  { icon: Users, label: "Quartos", value: "4 quartos" },
-  { icon: Bath, label: "Banheiros", value: "3 banheiros" },
-  { icon: Car, label: "Garagem", value: "2 vagas" },
-  { icon: Waves, label: "Suítes", value: "2 suítes" },
-];
+interface PropertyDetailsProps {
+  subtitle?: string;
+  paragraphs?: string[];
+  bedrooms?: number;
+  bathrooms?: number;
+  garageSpots?: number;
+  suites?: number;
+  totalArea?: number;
+  builtArea?: number;
+  displayFeatures?: {
+    label: string;
+    value: string;
+    iconId: string;
+  }[];
+  amenities?: string[];
+}
 
-const amenities = [
-  "Piscina aquecida",
-  "Churrasqueira gourmet",
-  "Armários planejados",
-  "Jardim paisagístico",
-  "Sistema de segurança",
-  "Aquecimento solar",
-];
+export default function PropertyDetails({
+  subtitle,
+  paragraphs,
+  bedrooms,
+  bathrooms,
+  garageSpots,
+  suites,
+  totalArea,
+  builtArea,
+  amenities,
+}: PropertyDetailsProps) {
+  // Dados padrão se não houver props
+  const features = [
+    { icon: Home, label: "Área Total", value: `${totalArea || 450}m²` },
+    { icon: Maximize, label: "Área Construída", value: `${builtArea || 320}m²` },
+    { icon: Users, label: "Quartos", value: `${bedrooms || 4} quartos` },
+    { icon: Bath, label: "Banheiros", value: `${bathrooms || 3} banheiros` },
+    { icon: Car, label: "Garagem", value: `${garageSpots || 2} vagas` },
+    { icon: Waves, label: "Suítes", value: `${suites || 2} suítes` },
+  ];
 
-export default function PropertyDetails() {
+  const amenitiesList =
+    amenities && amenities.length > 0
+      ? amenities
+      : [
+          "Piscina aquecida",
+          "Churrasqueira gourmet",
+          "Armários planejados",
+          "Jardim paisagístico",
+          "Sistema de segurança",
+          "Aquecimento solar",
+        ];
+
+  const detailsData = {
+    subtitle: subtitle || "Uma residência projetada para oferecer máximo conforto e sofisticação",
+    paragraphs: paragraphs || [
+      "Esta magnífica residência combina elegância contemporânea com funcionalidade excepcional. Localizada em uma das áreas mais valorizadas de Ibiporã, oferece privacidade e tranquilidade sem abrir mão da proximidade com os principais pontos da cidade.",
+      "Cada ambiente foi cuidadosamente planejado para proporcionar conforto e bem-estar, com acabamentos de primeira qualidade e tecnologia integrada em todos os cômodos.",
+    ],
+  };
+
   return (
     <section id="imovel" className="py-16 px-4 bg-[#1C1C1C]">
       <div className="max-w-6xl mx-auto">
-        <SectionTitle
-          title="Detalhes do Imóvel"
-          subtitle="Uma residência projetada para oferecer máximo conforto e sofisticação"
-        />
+        <SectionTitle title="Detalhes do Imóvel" subtitle={detailsData.subtitle} />
 
         {/* Features Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-12">
@@ -58,16 +94,11 @@ export default function PropertyDetails() {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold text-[#BFB4AA] mb-4">Sobre o Imóvel</h3>
-            <p className="text-white leading-relaxed mb-4">
-              Esta magnífica residência combina elegância contemporânea com funcionalidade
-              excepcional. Localizada em uma das áreas mais valorizadas de Ibiporã, oferece
-              privacidade e tranquilidade sem abrir mão da proximidade com os principais pontos da
-              cidade.
-            </p>
-            <p className="text-white leading-relaxed">
-              Cada ambiente foi cuidadosamente planejado para proporcionar conforto e bem-estar, com
-              acabamentos de primeira qualidade e tecnologia integrada em todos os cômodos.
-            </p>
+            {detailsData.paragraphs.map((paragraph: string, index: number) => (
+              <p key={index} className="text-white leading-relaxed mb-4">
+                {paragraph}
+              </p>
+            ))}
           </motion.div>
 
           <motion.div
@@ -78,7 +109,7 @@ export default function PropertyDetails() {
           >
             <h3 className="text-2xl font-bold text-[#BFB4AA] mb-4">Diferenciais</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {amenities.map((amenity, index) => (
+              {amenitiesList.map((amenity: string, index: number) => (
                 <motion.div
                   key={amenity}
                   initial={{ opacity: 0, scale: 0.9 }}

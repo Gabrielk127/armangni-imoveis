@@ -2,10 +2,24 @@
 
 import { motion } from "framer-motion";
 import CTAButton from "@/components/ui/cta-button";
+import CreatePropertyButton from "./CreatePropertyButton";
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  title?: string;
+  subtitle?: string;
+}
+
+export default function HeroSection({ title, subtitle }: HeroSectionProps) {
   const scrollToContact = () => {
     document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  // Dados padrão se não houver props
+  const heroData = {
+    title: title || "Casa dos Sonhos em Ibiporã",
+    subtitle:
+      subtitle ||
+      "Luxo, conforto e localização privilegiada em um dos bairros mais valorizados da cidade",
   };
 
   return (
@@ -31,7 +45,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
           className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight text-[#BFB4AA]"
         >
-          Casa dos Sonhos em Ibiporã
+          {heroData.title}
         </motion.h1>
 
         <motion.p
@@ -40,7 +54,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-lg md:text-xl lg:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto"
         >
-          Luxo, conforto e localização privilegiada em um dos bairros mais valorizados da cidade
+          {heroData.subtitle}
         </motion.p>
 
         <motion.div
@@ -56,7 +70,7 @@ export default function HeroSection() {
           >
             Entrar em Contato
           </CTAButton>
-
+          <CreatePropertyButton />
           <CTAButton
             variant="default"
             size="lg"

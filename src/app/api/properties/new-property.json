@@ -1,0 +1,19 @@
+{
+  "slug": "casa-moderna-no-centro",
+  "hero": {
+    "title": "Casa Moderna no Centro",
+    "subtitle": "Perto de tudo que você precisa"
+  },
+  "details": {
+    "subtitle": "Conforto e modernidade",
+    "paragraphs": ["Localização central com fácil acesso a comércios e serviços."]
+  },
+  "bedrooms": 3,
+  "bathrooms": 2,
+  "garageSpots": 2,
+  "suites": 1,
+  "totalArea": 250,
+  "builtArea": 180,
+  "displayFeatures": [{ "label": "Quartos", "value": "3 quartos", "iconId": "Users" }],
+  "amenities": ["Cozinha planejada"]
+}

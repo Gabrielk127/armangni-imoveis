@@ -49,7 +49,7 @@ export default function ContactForm() {
       <div className="max-w-6xl mx-auto">
         <SectionTitle
           title="Entre em Contato"
-          subtitle="Estamos prontos para ajudá-lo a realizar o sonho da casa própria"
+          subtitle="Estamos prontos para ajudá-lo a realizar o seu sonho"
           className="text-white"
         />
 

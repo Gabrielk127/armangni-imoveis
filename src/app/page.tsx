@@ -8,19 +8,68 @@ import LocationSection from "@/components/location-section";
 import VideoSection from "@/components/video-section";
 import ContactForm from "@/components/contact-form";
 import Header from "@/components/header/header";
+import { useFirstProperty } from "@/hooks/useProperty";
 
 export default function Home() {
+  const { property, loading, error } = useFirstProperty();
+
+  if (loading) {
+    return (
+      <main>
+        <Header />
+        <div className="min-h-screen bg-[#1C1C1C] flex items-center justify-center">
+          <div className="text-white text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-600 mx-auto mb-4"></div>
+            <p>Carregando informações do imóvel...</p>
+          </div>
+        </div>
+      </main>
+    );
+  }
+
+  if (error) {
+    return (
+      <main>
+        <Header />
+        <div className="min-h-screen bg-[#1C1C1C] flex items-center justify-center">
+          <div className="text-white text-center max-w-md">
+            <p className="text-red-400 mb-4">Erro ao carregar dados: {error}</p>
+            <p className="text-gray-400">Usando dados padrão da aplicação.</p>
+          </div>
+        </div>
+      </main>
+    );
+  }
+
   return (
     <main>
       <Header />
       <div className="min-h-screen bg-[#1C1C1C]">
-        <HeroSection />
+        <HeroSection title={property?.hero?.title} subtitle={property?.hero?.subtitle} />
         <PhotoGallery />
-        <PropertyDetails />
+        <PropertyDetails
+          subtitle={property?.details?.subtitle}
+          paragraphs={property?.details?.paragraphs}
+          bedrooms={property?.bedrooms}
+          bathrooms={property?.bathrooms}
+          garageSpots={property?.garageSpots}
+          suites={property?.suites}
+          totalArea={property?.totalArea}
+          builtArea={property?.builtArea}
+          displayFeatures={property?.displayFeatures}
+          amenities={property?.amenities}
+        />
         <PropertyValue />
         <CondominiumInfo />
         <LocationSection />
-        <VideoSection />
+        {property?.video?.videoUrl && (
+          <VideoSection
+            title={property.video.title}
+            subtitle={property.video.subtitle}
+            videoUrl={property.video.videoUrl}
+            description={property.video.description}
+          />
+        )}
         <ContactForm />
       </div>
     </main>
