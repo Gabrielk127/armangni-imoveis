@@ -16,7 +16,7 @@ export default function HeroSection({ title, subtitle }: HeroSectionProps) {
 
   // Dados padrão se não houver props
   const heroData = {
-    title: title || "Casa dos Sonhos em Ibiporã",
+    title: title || "Casa dos Sonhos",
     subtitle:
       subtitle ||
       "Luxo, conforto e localização privilegiada em um dos bairros mais valorizados da cidade",

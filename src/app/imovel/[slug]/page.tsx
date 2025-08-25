@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getPropertyById } from "@/services/propertyService";
+import { getPropertyBySlug } from "@/services/propertyService";
 import HeroSection from "@/components/hero-section";
 import PropertyDetails from "@/components/property-details";
 import PhotoGallery from "@/components/photo-gallery";
@@ -8,23 +8,23 @@ import PropertyValue from "@/components/property-value";
 import CondominiumInfo from "@/components/condominium-info";
 import VideoSection from "@/components/video-section";
 import ContactForm from "@/components/contact-form";
+import FloatingWhatsAppButton from "@/components/floating-whatsapp-button";
 
 interface PageProps {
   params: Promise<{
-    id: string;
+    slug: string;
   }>;
 }
 
 export default async function PropertyPage({ params }: PageProps) {
-  const { id } = await params;
-  const propertyId = parseInt(id);
-
-  if (isNaN(propertyId)) {
-    notFound();
-  }
+  const { slug } = await params;
 
   try {
-    const property = await getPropertyById(propertyId);
+    const property = await getPropertyBySlug(slug);
+
+    if (!property) {
+      notFound();
+    }
 
     if (!property) {
       notFound();
@@ -32,6 +32,10 @@ export default async function PropertyPage({ params }: PageProps) {
 
     return (
       <main className="min-h-screen bg-gray-50">
+        <FloatingWhatsAppButton
+          phoneNumber="5543998377239"
+          whatsappMessage={property.whatsappMessage}
+        />
         <HeroSection title={property.hero?.title} subtitle={property.hero?.subtitle} />
 
         <PropertyDetails
@@ -48,15 +52,16 @@ export default async function PropertyPage({ params }: PageProps) {
         />
 
         <PhotoGallery />
-        <LocationSection />
-        <PropertyValue />
-        <CondominiumInfo />
+        <LocationSection locationData={property.location} />
+        <PropertyValue investmentData={property.investment} />
+        <CondominiumInfo condominiumData={property.condominium} />
         {property.video?.videoUrl && (
           <VideoSection
             title={property.video.title}
             subtitle={property.video.subtitle}
             videoUrl={property.video.videoUrl}
             description={property.video.description}
+            sectionDescription={property.video.sectionDescription}
           />
         )}
         <ContactForm />
@@ -69,17 +74,10 @@ export default async function PropertyPage({ params }: PageProps) {
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { id } = await params;
-  const propertyId = parseInt(id);
-
-  if (isNaN(propertyId)) {
-    return {
-      title: "Imóvel não encontrado",
-    };
-  }
+  const { slug } = await params;
 
   try {
-    const property = await getPropertyById(propertyId);
+    const property = await getPropertyBySlug(slug);
 
     if (!property) {
       return {

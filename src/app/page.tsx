@@ -45,7 +45,10 @@ export default function Home() {
   return (
     <main>
       <Header />
-      <FloatingWhatsAppButton phoneNumber="5543998377239" />
+      <FloatingWhatsAppButton
+        phoneNumber="5543998377239"
+        whatsappMessage={property?.whatsappMessage}
+      />
       <div className="min-h-screen bg-[#1C1C1C]">
         <HeroSection title={property?.hero?.title} subtitle={property?.hero?.subtitle} />
         <PhotoGallery />
@@ -61,15 +64,16 @@ export default function Home() {
           displayFeatures={property?.displayFeatures}
           amenities={property?.amenities}
         />
-        <PropertyValue />
-        <CondominiumInfo />
-        <LocationSection />
+        <PropertyValue investmentData={property?.investment} />
+        <CondominiumInfo condominiumData={property?.condominium} />
+        <LocationSection locationData={property?.location} />
         {property?.video?.videoUrl && (
           <VideoSection
             title={property.video.title}
             subtitle={property.video.subtitle}
             videoUrl={property.video.videoUrl}
             description={property.video.description}
+            sectionDescription={property.video.sectionDescription}
           />
         )}
         <ContactForm />

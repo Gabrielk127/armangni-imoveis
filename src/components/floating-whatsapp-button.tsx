@@ -1,25 +1,26 @@
 import type { FC } from "react";
-import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa";
 
 interface FloatingWhatsAppButtonProps {
   phoneNumber: string;
+  whatsappMessage?: string;
   defaultMessage?: string;
   className?: string;
 }
 
-const imovel = "exemplo";
-
 const FloatingWhatsAppButton: FC<FloatingWhatsAppButtonProps> = ({
   phoneNumber,
-  defaultMessage = `Olá! Gostaria de mais informações sobre o imóvel: ${imovel}`,
+  whatsappMessage,
+  defaultMessage = "Olá! Gostaria de mais informações sobre este imóvel.",
   className = "",
 }) => {
-  const encodedMessage = encodeURIComponent(defaultMessage);
+  // Usar mensagem do Firebase ou mensagem padrão
+  const message = whatsappMessage || defaultMessage;
+  const encodedMessage = encodeURIComponent(message);
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
   return (
-    <motion.a
+    <a
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
@@ -31,12 +32,13 @@ const FloatingWhatsAppButton: FC<FloatingWhatsAppButtonProps> = ({
         rounded-full shadow-lg
         cursor-pointer
         py-3 px-4
+        hover:bg-green-600 transition-colors
         ${className}
       `}
     >
       {/* Ícone do WhatsApp */}
       <FaWhatsapp className="h-9 w-9" />
-    </motion.a>
+    </a>
   );
 };
 

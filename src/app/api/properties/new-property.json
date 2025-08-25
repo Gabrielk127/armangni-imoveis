@@ -1,19 +1,104 @@
 {
-  "slug": "casa-moderna-no-centro",
-  "hero": {
-    "title": "Casa Moderna no Centro",
-    "subtitle": "Perto de tudo que você precisa"
-  },
-  "details": {
-    "subtitle": "Conforto e modernidade",
-    "paragraphs": ["Localização central com fácil acesso a comércios e serviços."]
-  },
-  "bedrooms": 3,
-  "bathrooms": 2,
-  "garageSpots": 2,
-  "suites": 1,
-  "totalArea": 250,
-  "builtArea": 180,
-  "displayFeatures": [{ "label": "Quartos", "value": "3 quartos", "iconId": "Users" }],
-  "amenities": ["Cozinha planejada"]
+  "property": {
+    "slug": "casa-dos-sonhos-condominio-jardins-ibipora",
+    "pageTitle": "Casa dos Sonhos à Venda em Ibiporã | Condomínio Jardins",
+    "whatsappMessage": "Olá! Tenho interesse na 'Casa dos Sonhos em Ibiporã' que vi no site e gostaria de agendar uma visita ou obter mais informações.",
+    "pageDescription": "Luxo, conforto e uma localização privilegiada. Conheça esta incrível casa de alto padrão no Condomínio Residencial Jardins, um dos bairros mais valorizados de Ibiporã.",
+    "headerImage": "/images/casa-fachada.jpg",
+    "gallery": [
+      "/images/gallery/piscina.jpg",
+      "/images/gallery/area-gourmet.jpg",
+      "/images/gallery/sala-de-estar.jpg",
+      "/images/gallery/suite-master.jpg",
+      "/images/gallery/cozinha-planejada.jpg"
+    ],
+    "details": {
+      "sectionTitle": "Detalhes que Fazem a Diferença",
+      "sectionDescription": "Cada metro quadrado foi pensado para oferecer o máximo de conforto e sofisticação para você e sua família.",
+      "summary": {
+        "terreno": {
+          "label": "Terreno (total)",
+          "value": 450,
+          "unit": "m²"
+        },
+        "areaConstruida": {
+          "label": "Área Construída",
+          "value": 320,
+          "unit": "m²"
+        },
+        "quartos": {
+          "label": "Quartos",
+          "value": 4
+        },
+        "suites": {
+          "label": "Suítes",
+          "value": 2
+        },
+        "banheiros": {
+          "label": "Banheiros",
+          "value": 3
+        },
+        "vagas": {
+          "label": "Vagas",
+          "value": 2
+        }
+      },
+      "descriptionTitle": "Sobre o Imóvel",
+      "descriptionParagraphs": [
+        "Esta residência de alto padrão é a definição de morar bem. Com um design moderno e acabamentos de primeira linha, ela oferece ambientes amplos e integrados, ideais para receber amigos e familiares.",
+        "A área externa é um convite ao lazer, com uma piscina aquecida e uma churrasqueira gourmet completa. A casa já conta com armários planejados em todos os cômodos, sistema de segurança e aquecimento solar, unindo praticidade e sustentabilidade."
+      ],
+      "differentiators": [
+        "Piscina aquecida",
+        "Churrasqueira gourmet",
+        "Armários planejados",
+        "Jardim com paisagismo",
+        "Sistema de segurança",
+        "Aquecimento solar"
+      ]
+    },
+    "investment": {
+      "price": 850000,
+      "priceFormatted": "R$ 850.000,00",
+      "conditions": "À vista. Aceita financiamento bancário e parcelamento direto."
+    },
+    "condominium": {
+      "sectionTitle": "O Condomínio Residencial Jardins",
+      "sectionDescription": "Viva com segurança e qualidade de vida em um dos melhores condomínios da região.",
+      "image": "/images/condominio-entrada.jpg",
+      "descriptionTitle": "Infraestrutura Completa para Sua Família",
+      "descriptionParagraphs": [
+        "O Condomínio Jardins é reconhecido por sua segurança impecável e sua completa estrutura de lazer. Aqui, você encontra tudo o que precisa para viver momentos inesquecíveis."
+      ],
+      "amenities": [
+        { "icon": "shield-check", "label": "Segurança 24h" },
+        { "icon": "dumbbell", "label": "Academia" },
+        { "icon": "cake", "label": "Salão de Festas" },
+        { "icon": "car", "label": "Estacionamento para Visitantes" },
+        { "icon": "water", "label": "Piscina" },
+        { "icon": "tree", "label": "Área Verde" }
+      ]
+    },
+    "location": {
+      "sectionDescription": "Localizado em uma área nobre de Ibiporã, com fácil acesso aos principais pontos da cidade.",
+      "googleMapsUrl": "http://googleusercontent.com/maps.google.com/6",
+      "address": "Condomínio Residencial Jardins, Ibiporã - PR, 86200-000",
+      "nearbyPoints": [
+        { "icon": "school", "label": "Escolas", "distance": "5 min" },
+        { "icon": "hospital", "label": "Hospital", "distance": "7 min" },
+        { "icon": "shopping-cart", "label": "Supermercado", "distance": "3 min" },
+        { "icon": "store", "label": "Centro Comercial", "distance": "10 min" }
+      ],
+      "advantages": [
+        "Bairro mais valorizado da cidade",
+        "Acesso rápido a rodovias",
+        "Rua tranquila e arborizada",
+        "Alta qualidade de vida"
+      ]
+    },
+    "video": {
+      "sectionDescription": "Faça um tour virtual e apaixone-se por cada detalhe desta casa espetacular.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=13eja_RYimU"
+    }
+  }
 }

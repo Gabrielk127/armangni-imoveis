@@ -7,13 +7,22 @@ import { z } from "zod";
 
 const PropertySchema = z.object({
   slug: z.string().min(3),
+  pageTitle: z.string().optional(),
+  whatsappMessage: z.string().optional(),
+  pageDescription: z.string().optional(),
+  headerImage: z.string().optional(),
+  gallery: z.array(z.string()).optional(),
   hero: z.object({
     title: z.string(),
     subtitle: z.string(),
   }),
   details: z.object({
+    sectionTitle: z.string().optional(),
+    sectionDescription: z.string().optional(),
     subtitle: z.string(),
     paragraphs: z.array(z.string()),
+    descriptionTitle: z.string().optional(),
+    differentiators: z.array(z.string()).optional(),
   }),
   video: z
     .object({
@@ -21,6 +30,44 @@ const PropertySchema = z.object({
       subtitle: z.string(),
       videoUrl: z.string().url(),
       description: z.string(),
+      sectionDescription: z.string().optional(),
+    })
+    .optional(),
+  investment: z
+    .object({
+      price: z.number(),
+      priceFormatted: z.string(),
+      conditions: z.string(),
+    })
+    .optional(),
+  condominium: z
+    .object({
+      sectionTitle: z.string(),
+      sectionDescription: z.string(),
+      image: z.string(),
+      descriptionTitle: z.string(),
+      descriptionParagraphs: z.array(z.string()),
+      amenities: z.array(
+        z.object({
+          icon: z.string(),
+          label: z.string(),
+        }),
+      ),
+    })
+    .optional(),
+  location: z
+    .object({
+      sectionDescription: z.string(),
+      googleMapsUrl: z.string(),
+      address: z.string(),
+      nearbyPoints: z.array(
+        z.object({
+          icon: z.string(),
+          label: z.string(),
+          distance: z.string(),
+        }),
+      ),
+      advantages: z.array(z.string()),
     })
     .optional(),
   bedrooms: z.number().positive(),

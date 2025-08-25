@@ -34,32 +34,19 @@ export default function PropertyDetails({
 }: PropertyDetailsProps) {
   // Dados padrão se não houver props
   const features = [
-    { icon: Home, label: "Área Total", value: `${totalArea || 450}m²` },
-    { icon: Maximize, label: "Área Construída", value: `${builtArea || 320}m²` },
-    { icon: Users, label: "Quartos", value: `${bedrooms || 4} quartos` },
-    { icon: Bath, label: "Banheiros", value: `${bathrooms || 3} banheiros` },
-    { icon: Car, label: "Garagem", value: `${garageSpots || 2} vagas` },
-    { icon: Waves, label: "Suítes", value: `${suites || 2} suítes` },
+    { icon: Home, label: "Área Total", value: `${totalArea || 0}m²` },
+    { icon: Maximize, label: "Área Construída", value: `${builtArea || 0}m²` },
+    { icon: Users, label: "Quartos", value: `${bedrooms || 0} quartos` },
+    { icon: Bath, label: "Banheiros", value: `${bathrooms || 0} banheiros` },
+    { icon: Car, label: "Garagem", value: `${garageSpots || 0} vagas` },
+    { icon: Waves, label: "Suítes", value: `${suites || 0} suítes` },
   ];
 
-  const amenitiesList =
-    amenities && amenities.length > 0
-      ? amenities
-      : [
-          "Piscina aquecida",
-          "Churrasqueira gourmet",
-          "Armários planejados",
-          "Jardim paisagístico",
-          "Sistema de segurança",
-          "Aquecimento solar",
-        ];
+  const amenitiesList = amenities && amenities.length > 0 ? amenities : [" ", "", "", "", "", ""];
 
   const detailsData = {
     subtitle: subtitle || "Uma residência projetada para oferecer máximo conforto e sofisticação",
-    paragraphs: paragraphs || [
-      "Esta magnífica residência combina elegância contemporânea com funcionalidade excepcional. Localizada em uma das áreas mais valorizadas de Ibiporã, oferece privacidade e tranquilidade sem abrir mão da proximidade com os principais pontos da cidade.",
-      "Cada ambiente foi cuidadosamente planejado para proporcionar conforto e bem-estar, com acabamentos de primeira qualidade e tecnologia integrada em todos os cômodos.",
-    ],
+    paragraphs: paragraphs || ["", ""],
   };
 
   return (
