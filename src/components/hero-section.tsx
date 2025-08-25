@@ -31,7 +31,7 @@ export default function HeroSection({ title, subtitle }: HeroSectionProps) {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/house2.png')`,
+          backgroundImage: `url('https://res.cloudinary.com/dhptebqcq/image/upload/v1756124661/wfsbbhd1p5mxo3dym5zw.jpg')`,
         }}
       >
         <div className="absolute inset-0 bg-black/60" />
