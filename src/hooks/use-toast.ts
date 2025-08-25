@@ -1,7 +1,5 @@
 "use client";
 
-// Hook de toast unificado: expõe API simples (toast({...})) usando 'sonner'.
-// Facilita futura migração ou extensão (ex: variantes, ações, etc.).
 import { useCallback } from "react";
 import { toast as sonner } from "sonner";
 

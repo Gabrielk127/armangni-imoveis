@@ -1,24 +1,54 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, School, Hospital, ShoppingCart, Coffee } from "lucide-react";
+import { MapPin, School, Hospital, ShoppingCart, Coffee, Store } from "lucide-react";
 import SectionTitle from "@/components/ui/section-title";
+import { PropertyData } from "@/types";
 
-const nearbyPlaces = [
-  { icon: School, name: "Colégio Estadual", distance: "500m" },
-  { icon: Hospital, name: "Hospital Municipal", distance: "1.2km" },
-  { icon: ShoppingCart, name: "Shopping Center", distance: "800m" },
-  { icon: Coffee, name: "Centro Comercial", distance: "600m" },
+interface LocationSectionProps {
+  locationData?: PropertyData["location"];
+}
+
+const iconMap = {
+  school: School,
+  hospital: Hospital,
+  "shopping-cart": ShoppingCart,
+  store: Store,
+  coffee: Coffee,
+} as const;
+
+// Dados padrão caso não venham do Firebase
+const defaultNearbyPlaces = [
+  { icon: "school", label: "Colégio Estadual", distance: "500m" },
+  { icon: "hospital", label: "Hospital Municipal", distance: "1.2km" },
+  { icon: "shopping-cart", label: "Shopping Center", distance: "800m" },
+  { icon: "coffee", label: "Centro Comercial", distance: "600m" },
 ];
 
-export default function LocationSection() {
+const defaultAdvantages = [
+  "Fácil acesso às principais vias da cidade",
+  "Transporte público próximo",
+  "Área residencial consolidada",
+  "Proximidade com comércio e serviços",
+];
+
+export default function LocationSection({ locationData }: LocationSectionProps) {
+  // Usar dados do Firebase ou dados padrão
+  const sectionDescription =
+    locationData?.sectionDescription || "No coração de Ibiporã, próximo a tudo que você precisa";
+  const googleMapsUrl =
+    locationData?.googleMapsUrl ||
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.123456789!2d-51.0123456!3d-23.2654321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDE1JzU1LjYiUyA1McKwMDAnNDQuNCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123";
+  const address =
+    locationData?.address ||
+    "Rua das Flores, 123 - Condomínio Residencial Jardins\nIbiporã - PR, 86200-000";
+  const nearbyPlaces = locationData?.nearbyPoints || defaultNearbyPlaces;
+  const advantages = locationData?.advantages || defaultAdvantages;
+
   return (
     <section className="py-16 px-4 bg-[#1C1C1C]">
       <div className="max-w-6xl mx-auto">
-        <SectionTitle
-          title="Localização Privilegiada"
-          subtitle="No coração de Ibiporã, próximo a tudo que você precisa"
-        />
+        <SectionTitle title="Localização Privilegiada" subtitle={sectionDescription} />
 
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Map */}
@@ -31,7 +61,7 @@ export default function LocationSection() {
           >
             <div className="aspect-[4/3] bg-gray-200 rounded-lg overflow-hidden mt-2">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.123456789!2d-51.0123456!3d-23.2654321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDE1JzU1LjYiUyA1McKwMDAnNDQuNCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123"
+                src={googleMapsUrl}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -47,9 +77,12 @@ export default function LocationSection() {
                 <h3 className="text-xl font-semibold text-[#BFB4AA]">Endereço</h3>
               </div>
               <p className="text-[#c9ccd0]">
-                Rua das Flores, 123 - Condomínio Residencial Jardins
-                <br />
-                Ibiporã - PR, 86200-000
+                {address.split("\n").map((line, index) => (
+                  <span key={index}>
+                    {line}
+                    {index < address.split("\n").length - 1 && <br />}
+                  </span>
+                ))}
               </p>
             </div>
           </motion.div>
@@ -67,32 +100,34 @@ export default function LocationSection() {
                 Pontos de Interesse Próximos
               </h4>
               <div className="space-y-3">
-                {nearbyPlaces.map((place, index) => (
-                  <motion.div
-                    key={place.name}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="flex items-center justify-between p-3 bg-[#262626] rounded-lg shadow-sm"
-                  >
-                    <div className="flex items-center">
-                      <place.icon className="w-5 h-5 text-[#BFB4AA] mr-3" />
-                      <span className="text-[#c9ccd0]">{place.name}</span>
-                    </div>
-                    <span className="text-sm text-[#c9ccd0] font-medium">{place.distance}</span>
-                  </motion.div>
-                ))}
+                {nearbyPlaces.map((place, index) => {
+                  const IconComponent = iconMap[place.icon as keyof typeof iconMap] || MapPin;
+                  return (
+                    <motion.div
+                      key={`${place.label}-${index}`}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="flex items-center justify-between p-3 bg-[#262626] rounded-lg shadow-sm"
+                    >
+                      <div className="flex items-center">
+                        <IconComponent className="w-5 h-5 text-[#BFB4AA] mr-3" />
+                        <span className="text-[#c9ccd0]">{place.label}</span>
+                      </div>
+                      <span className="text-sm text-[#c9ccd0] font-medium">{place.distance}</span>
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
 
             <div className="p-4 bg-[#262626] rounded-lg">
               <h4 className="font-semibold text-[#BFB4AA] mb-2">Vantagens da Localização</h4>
               <ul className="text-sm text-[#c9ccd0] space-y-1">
-                <li>• Fácil acesso às principais vias da cidade</li>
-                <li>• Transporte público próximo</li>
-                <li>• Área residencial consolidada</li>
-                <li>• Proximidade com comércio e serviços</li>
+                {advantages.map((advantage, index) => (
+                  <li key={index}>• {advantage}</li>
+                ))}
               </ul>
             </div>
           </motion.div>

@@ -1,43 +1,82 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Shield, Dumbbell, Users, Car, Waves, TreePine } from "lucide-react";
+import {
+  Shield,
+  Dumbbell,
+  Users,
+  Car,
+  Waves,
+  TreePine,
+  ShieldCheck,
+  Cake,
+  School,
+  Hospital,
+  ShoppingCart,
+  Store,
+} from "lucide-react";
 import SectionTitle from "@/components/ui/section-title";
 import Image from "next/image";
+import { PropertyData } from "@/types";
 
-const amenities = [
+interface CondominiumInfoProps {
+  condominiumData?: PropertyData["condominium"];
+}
+
+const iconMap = {
+  "shield-check": ShieldCheck,
+  dumbbell: Dumbbell,
+  cake: Cake,
+  car: Car,
+  water: Waves,
+  tree: TreePine,
+  school: School,
+  hospital: Hospital,
+  "shopping-cart": ShoppingCart,
+  store: Store,
+  shield: Shield,
+  users: Users,
+} as const;
+
+// Dados padrão caso não venham do Firebase
+const defaultAmenities = [
   {
-    icon: Shield,
-    title: "Segurança 24h",
-    description: "Portaria com controle de acesso",
+    icon: "shield",
+    label: "Segurança 24h",
   },
   {
-    icon: Dumbbell,
-    title: "Academia",
-    description: "Equipamentos modernos e completos",
+    icon: "dumbbell",
+    label: "Academia",
   },
   {
-    icon: Users,
-    title: "Salão de Festas",
-    description: "Espaço para eventos e comemorações",
+    icon: "users",
+    label: "Salão de Festas",
   },
-  { icon: Car, title: "Estacionamento", description: "Vagas para visitantes" },
-  { icon: Waves, title: "Piscina", description: "Área aquática com deck" },
+  { icon: "car", label: "Estacionamento" },
+  { icon: "water", label: "Piscina" },
   {
-    icon: TreePine,
-    title: "Área Verde",
-    description: "Jardins e espaços de convivência",
+    icon: "tree",
+    label: "Área aa",
   },
 ];
 
-export default function CondominiumInfo() {
+export default function CondominiumInfo({ condominiumData }: CondominiumInfoProps) {
+  // Usar dados do Firebase ou dados padrão
+  const sectionTitle = condominiumData?.sectionTitle || "Condomínio Residencial Jardins";
+  const sectionDescription =
+    condominiumData?.sectionDescription || "Infraestrutura completa para seu conforto e bem-estar";
+  const image = condominiumData?.image || "/house2.png";
+  const descriptionTitle = condominiumData?.descriptionTitle || "Sobre o Condomínio";
+  const descriptionParagraphs = condominiumData?.descriptionParagraphs || [
+    "O Condomínio Residencial Jardins é reconhecido como um dos mais exclusivos de Ibiporã, oferecendo uma infraestrutura completa e serviços de alta qualidade para seus moradores.",
+    "Com apenas 24 lotes, garante privacidade e tranquilidade, além de uma localização estratégica próxima aos principais pontos comerciais e de serviços da cidade.",
+  ];
+  const amenities = condominiumData?.amenities || defaultAmenities;
+
   return (
     <section className="py-16 px-4 bg-[#1C1C1C]" id="condominio">
       <div className="max-w-6xl mx-auto">
-        <SectionTitle
-          title="Condomínio Residencial Jardins"
-          subtitle="Infraestrutura completa para seu conforto e bem-estar"
-        />
+        <SectionTitle title={sectionTitle} subtitle={sectionDescription} />
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           <motion.div
@@ -47,7 +86,7 @@ export default function CondominiumInfo() {
             viewport={{ once: true }}
           >
             <Image
-              src="/house2.png"
+              src={image}
               alt="Entrada do condomínio"
               className="w-full h-64 md:h-80 object-cover rounded-lg shadow-lg"
               width={600}
@@ -62,35 +101,33 @@ export default function CondominiumInfo() {
             viewport={{ once: true }}
             className="flex flex-col justify-center"
           >
-            <h3 className="text-2xl font-bold text-[#BFB4AA] mb-4">Sobre o Condomínio</h3>
-            <p className="text-white leading-relaxed mb-4">
-              O Condomínio Residencial Jardins é reconhecido como um dos mais exclusivos de Ibiporã,
-              oferecendo uma infraestrutura completa e serviços de alta qualidade para seus
-              moradores.
-            </p>
-            <p className="text-white leading-relaxed">
-              Com apenas 24 lotes, garante privacidade e tranquilidade, além de uma localização
-              estratégica próxima aos principais pontos comerciais e de serviços da cidade.
-            </p>
+            <h3 className="text-2xl font-bold text-[#BFB4AA] mb-4">{descriptionTitle}</h3>
+            {descriptionParagraphs.map((paragraph, index) => (
+              <p key={index} className="text-white leading-relaxed mb-4">
+                {paragraph}
+              </p>
+            ))}
           </motion.div>
         </div>
 
         {/* Amenities Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {amenities.map((amenity, index) => (
-            <motion.div
-              key={amenity.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="p-6 bg-[#262626] rounded-lg transition-colors"
-            >
-              <amenity.icon className="w-8 h-8 text-[#BFB4AA] mb-3" />
-              <h4 className="font-semibold text-white mb-2">{amenity.title}</h4>
-              <p className="text-sm text-[#c9ccd0]">{amenity.description}</p>
-            </motion.div>
-          ))}
+          {amenities.map((amenity, index) => {
+            const IconComponent = iconMap[amenity.icon as keyof typeof iconMap] || Shield;
+            return (
+              <motion.div
+                key={`${amenity.label}-${index}`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="p-6 bg-[#262626] rounded-lg transition-colors"
+              >
+                <IconComponent className="w-8 h-8 text-[#BFB4AA] mb-3" />
+                <h4 className="font-semibold text-white mb-2">{amenity.label}</h4>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
