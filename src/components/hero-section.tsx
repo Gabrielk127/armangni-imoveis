@@ -2,14 +2,14 @@
 
 import { motion } from "framer-motion";
 import CTAButton from "@/components/ui/cta-button";
-import CreatePropertyButton from "./CreatePropertyButton";
 
 interface HeroSectionProps {
   title?: string;
   subtitle?: string;
+  headerImage?: string;
 }
 
-export default function HeroSection({ title, subtitle }: HeroSectionProps) {
+export default function HeroSection({ title, subtitle, headerImage }: HeroSectionProps) {
   const scrollToContact = () => {
     document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -20,6 +20,7 @@ export default function HeroSection({ title, subtitle }: HeroSectionProps) {
     subtitle:
       subtitle ||
       "Luxo, conforto e localização privilegiada em um dos bairros mais valorizados da cidade",
+    backgroundImage: headerImage || "/house2.png",
   };
 
   return (
@@ -31,7 +32,7 @@ export default function HeroSection({ title, subtitle }: HeroSectionProps) {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/house2.png')`,
+          backgroundImage: `url('${heroData.backgroundImage}')`,
         }}
       >
         <div className="absolute inset-0 bg-black/60" />
@@ -70,7 +71,6 @@ export default function HeroSection({ title, subtitle }: HeroSectionProps) {
           >
             Entrar em Contato
           </CTAButton>
-          <CreatePropertyButton />
           <CTAButton
             variant="default"
             size="lg"

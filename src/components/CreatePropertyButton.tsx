@@ -22,13 +22,17 @@ export default function CreatePropertyButton() {
         "Olá! Tenho interesse na 'Casa dos Sonhos em Ibiporã' que vi no site e gostaria de agendar uma visita ou obter mais informações.",
       pageDescription:
         "Luxo, conforto e uma localização privilegiada. Conheça esta incrível casa de alto padrão no Condomínio Residencial Jardins, um dos bairros mais valorizados de Ibiporã.",
-      headerImage: "/images/casa-fachada.jpg",
+      headerImage:
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210401/tb7zqeekggtz6t074l8h.jpg",
       gallery: [
-        "/images/gallery/piscina.jpg",
-        "/images/gallery/area-gourmet.jpg",
-        "/images/gallery/sala-de-estar.jpg",
-        "/images/gallery/suite-master.jpg",
-        "/images/gallery/cozinha-planejada.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210401/tb7zqeekggtz6t074l8h.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210401/tb7zqeekggtz6t074l8h.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210401/tb7zqeekggtz6t074l8h.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210401/tb7zqeekggtz6t074l8h.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210401/tb7zqeekggtz6t074l8h.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210401/tb7zqeekggtz6t074l8h.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210401/tb7zqeekggtz6t074l8h.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210401/tb7zqeekggtz6t074l8h.jpg",
       ],
       hero: {
         title: "Casa dos Sonhos à Venda em Ibiporã | Condomínio Jardins",
@@ -73,7 +77,8 @@ export default function CreatePropertyButton() {
         sectionTitle: "O Condomínio Residencial Jardins",
         sectionDescription:
           "Viva com segurança e qualidade de vida em um dos melhores condomínios da região.",
-        image: "/images/condominio-entrada.jpg",
+        image:
+          "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210401/tb7zqeekggtz6t074l8h.jpg",
         descriptionTitle: "Infraestrutura Completa para Sua Família",
         descriptionParagraphs: [
           "O Condomínio Jardins é reconhecido por sua segurança impecável e sua completa estrutura de lazer. Aqui, você encontra tudo o que precisa para viver momentos inesquecíveis.",
@@ -197,7 +202,7 @@ export default function CreatePropertyButton() {
         disabled={isLoading}
         className="px-6 py-3 font-bold text-white bg-emerald-600 rounded-lg hover:bg-emerald-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
       >
-        {isLoading ? "Criando Casa dos Sonhos..." : "Criar Casa dos Sonhos"}
+        {isLoading ? "Criando Casa" : "Criar"}
       </button>
 
       {/* Área para exibir mensagens de feedback */}

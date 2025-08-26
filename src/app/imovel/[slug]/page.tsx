@@ -36,7 +36,11 @@ export default async function PropertyPage({ params }: PageProps) {
           phoneNumber="5543998377239"
           whatsappMessage={property.whatsappMessage}
         />
-        <HeroSection title={property.hero?.title} subtitle={property.hero?.subtitle} />
+        <HeroSection
+          title={property.hero?.title}
+          subtitle={property.hero?.subtitle}
+          headerImage={property.headerImage}
+        />
 
         <PropertyDetails
           subtitle={property.details?.subtitle}
@@ -51,7 +55,7 @@ export default async function PropertyPage({ params }: PageProps) {
           amenities={property.amenities}
         />
 
-        <PhotoGallery />
+        <PhotoGallery gallery={property.gallery} />
         <LocationSection locationData={property.location} />
         <PropertyValue investmentData={property.investment} />
         <CondominiumInfo condominiumData={property.condominium} />

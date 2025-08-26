@@ -6,20 +6,31 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import SectionTitle from "@/components/ui/section-title";
 
-const photos = [
+interface PhotoGalleryProps {
+  gallery?: string[];
+}
+
+// Fotos padrão como fallback
+const defaultPhotos = [
   { id: 1, src: "/house.png", alt: "Sala de estar" },
-  {
-    id: 2,
-    src: "/house2.png",
-    alt: "Cozinha gourmet",
-  },
+  { id: 2, src: "/house2.png", alt: "Cozinha gourmet" },
   { id: 3, src: "/house.png", alt: "Suíte master" },
   { id: 4, src: "/house2.png", alt: "Área de lazer" },
   { id: 5, src: "/house.png", alt: "Banheiro" },
   { id: 6, src: "/house2.png", alt: "Fachada" },
 ];
 
-export default function PhotoGallery() {
+export default function PhotoGallery({ gallery }: PhotoGalleryProps) {
+  // Converte as URLs do Firebase em objetos de foto ou usa as fotos padrão
+  const photos =
+    gallery && gallery.length > 0
+      ? gallery.map((url, index) => ({
+          id: index + 1,
+          src: url,
+          alt: `Imagem ${index + 1} da propriedade`,
+        }))
+      : defaultPhotos;
+
   const [selectedPhoto, setSelectedPhoto] = useState<number | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [carouselIndex, setCarouselIndex] = useState(0);

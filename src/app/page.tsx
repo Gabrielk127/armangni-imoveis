@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import HeroSection from "@/components/hero-section";
 import PhotoGallery from "@/components/photo-gallery";
 import PropertyDetails from "@/components/property-details";
@@ -10,6 +11,7 @@ import ContactForm from "@/components/contact-form";
 import Header from "@/components/header/header";
 import { useFirstProperty } from "@/hooks/useProperty";
 import FloatingWhatsAppButton from "@/components/floating-whatsapp-button";
+import CreatePropertyButton from "@/components/CreatePropertyButton";
 
 export default function Home() {
   const { property, loading, error } = useFirstProperty();
@@ -50,8 +52,12 @@ export default function Home() {
         whatsappMessage={property?.whatsappMessage}
       />
       <div className="min-h-screen bg-[#1C1C1C]">
-        <HeroSection title={property?.hero?.title} subtitle={property?.hero?.subtitle} />
-        <PhotoGallery />
+        <HeroSection
+          title={property?.hero?.title}
+          subtitle={property?.hero?.subtitle}
+          headerImage={property?.headerImage}
+        />
+        <PhotoGallery gallery={property?.gallery} />
         <PropertyDetails
           subtitle={property?.details?.subtitle}
           paragraphs={property?.details?.paragraphs}
@@ -77,6 +83,7 @@ export default function Home() {
           />
         )}
         <ContactForm />
+        <CreatePropertyButton />
       </div>
     </main>
   );
