@@ -2,6 +2,7 @@ import type React from "react";
 import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Casa dos Sonhos - Ibiporã, PR",
@@ -17,6 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <SpeedInsights />
       <head>
         <style>{`
         `}</style>

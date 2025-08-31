@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import CreatePropertyButton from "../CreatePropertyButton";
+// import CreatePropertyButton from "../CreatePropertyButton";
 
 const DesktopMenu = () => {
   const menuItems = [
@@ -25,7 +25,7 @@ const DesktopMenu = () => {
             <Image src="/logo-branco.png" width={200} height={200} alt="Logo da ax" />
           </Link>
         </motion.div>
-        <CreatePropertyButton />
+        {/* <CreatePropertyButton /> */}
 
         {/* Menu Links */}
         <nav className="hidden md:flex space-x-8">
