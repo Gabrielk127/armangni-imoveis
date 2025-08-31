@@ -1,49 +1,17 @@
 "use client";
 
 import type React from "react";
-
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, Mail, MessageCircle, Send } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Phone, Mail, MessageCircle } from "lucide-react";
 import SectionTitle from "@/components/ui/section-title";
-import CTAButton from "@/components/ui/cta-button";
-import { useToast } from "@/hooks/use-toast";
+import Form from "@/components/form"; // 👈 Importa o novo componente de formulário
 
-export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
+// A seção agora também recebe o identificador para passar para o formulário
+interface ContactSectionProps {
+  conversionIdentifier: string;
+}
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    toast({
-      title: "Mensagem enviada!",
-      description: "Entraremos em contato em breve. Obrigado pelo interesse!",
-    });
-
-    setFormData({ name: "", email: "", phone: "", message: "" });
-    setIsSubmitting(false);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
+export default function ContactSection({ conversionIdentifier }: ContactSectionProps) {
   return (
     <section id="contato" className="py-16 px-4 bg-[#262626] text-white">
       <div className="max-w-6xl mx-auto">
@@ -54,7 +22,11 @@ export default function ContactForm() {
         />
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Info */}
+          <div className=" md:hidden">
+            <Form conversionIdentifier={conversionIdentifier} />
+          </div>
+
+          {/* Coluna de Informações de Contato (sem alterações) */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -75,7 +47,7 @@ export default function ContactForm() {
                 <Phone className="w-6 h-6 text-[#BFB4AA]" />
                 <div>
                   <p className="font-semibold">Telefone</p>
-                  <p className="text-[#c9ccd0]">(43) 99999-9999</p>
+                  <p className="text-[#c9ccd0]">(43) 99180-7520</p>
                 </div>
               </div>
 
@@ -83,7 +55,7 @@ export default function ContactForm() {
                 <Mail className="w-6 h-6 text-[#BFB4AA]" />
                 <div>
                   <p className="font-semibold">E-mail</p>
-                  <p className="text-[#c9ccd0]">contato@imobiliaria.com.br</p>
+                  <p className="text-[#c9ccd0]">contato.armangni@gmail.com</p>
                 </div>
               </div>
 
@@ -91,7 +63,7 @@ export default function ContactForm() {
                 <MessageCircle className="w-6 h-6 text-[#BFB4AA]" />
                 <div>
                   <p className="font-semibold">WhatsApp</p>
-                  <p className="text-[#c9ccd0]">(43) 99999-9999</p>
+                  <p className="text-[#c9ccd0]">(43) 99180-7520</p>
                 </div>
               </div>
             </div>
@@ -106,82 +78,10 @@ export default function ContactForm() {
             </div>
           </motion.div>
 
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <Input
-                  type="text"
-                  name="name"
-                  placeholder="Seu nome completo"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="bg-[#1C1C1C] border-[#1C1C1C] text-white placeholder-[#c9ccd0]"
-                />
-              </div>
-
-              <div>
-                <Input
-                  type="email"
-                  name="email"
-                  placeholder="Seu e-mail"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="bg-[#1C1C1C] border-[#1C1C1C] text-white placeholder-[#c9ccd0]"
-                />
-              </div>
-
-              <div>
-                <Input
-                  type="tel"
-                  name="phone"
-                  placeholder="Seu telefone/WhatsApp"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required
-                  className="bg-[#1C1C1C] border-[#1C1C1C] text-white placeholder-[#c9ccd0]"
-                />
-              </div>
-
-              <div>
-                <Textarea
-                  name="message"
-                  placeholder="Sua mensagem (opcional)"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4}
-                  className="bg-[#1C1C1C] border-[#1C1C1C] text-white placeholder-[#c9ccd0] resize-none"
-                />
-              </div>
-
-              <CTAButton
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-[#BFB4AA] hover:bg-[#BFB4AA] text-black py-3 cursor-pointer"
-              >
-                {isSubmitting ? (
-                  "Enviando..."
-                ) : (
-                  <>
-                    <Send className="w-4 h-4 mr-2" />
-                    Enviar Mensagem
-                  </>
-                )}
-              </CTAButton>
-
-              <p className="text-xs text-[#c9ccd0] text-center">
-                Ao enviar este formulário, você concorda com nossa política de privacidade e
-                autoriza o contato para apresentação da proposta.
-              </p>
-            </form>
-          </motion.div>
+          {/* Coluna do Formulário (agora apenas renderiza o componente Form) */}
+          <div className="hidden md:inline-block">
+            <Form conversionIdentifier={conversionIdentifier} />
+          </div>
         </div>
       </div>
     </section>

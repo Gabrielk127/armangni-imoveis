@@ -7,11 +7,9 @@ import PropertyValue from "@/components/property-value";
 import CondominiumInfo from "@/components/condominium-info";
 import LocationSection from "@/components/location-section";
 import VideoSection from "@/components/video-section";
-import ContactForm from "@/components/contact-form";
 import Header from "@/components/header/header";
 import { useFirstProperty } from "@/hooks/useProperty";
 import FloatingWhatsAppButton from "@/components/floating-whatsapp-button";
-import CreatePropertyButton from "@/components/CreatePropertyButton";
 
 export default function Home() {
   const { property, loading, error } = useFirstProperty();
@@ -48,7 +46,7 @@ export default function Home() {
     <main>
       <Header />
       <FloatingWhatsAppButton
-        phoneNumber="5543998377239"
+        phoneNumber="5543991807520"
         whatsappMessage={property?.whatsappMessage}
       />
       <div className="min-h-screen bg-[#1C1C1C]">
@@ -82,8 +80,6 @@ export default function Home() {
             sectionDescription={property.video.sectionDescription}
           />
         )}
-        <ContactForm />
-        <CreatePropertyButton />
       </div>
     </main>
   );

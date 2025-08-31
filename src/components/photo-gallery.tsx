@@ -217,7 +217,7 @@ export default function PhotoGallery({ gallery }: PhotoGalleryProps) {
                 <button
                   aria-label="Fechar"
                   onClick={closeModal}
-                  className="absolute top-3 right-3 sm:top-4 sm:right-4 text-white/90 hover:text-white transition-colors"
+                  className="cursor-pointer absolute top-3 right-3 sm:top-4 sm:right-4 text-white/90 hover:text-white transition-colors"
                 >
                   <X size={32} />
                 </button>
@@ -229,7 +229,7 @@ export default function PhotoGallery({ gallery }: PhotoGalleryProps) {
                     e.stopPropagation();
                     prevPhoto();
                   }}
-                  className="hidden md:flex absolute left-3 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-colors"
+                  className="cursor-pointer hidden md:flex absolute left-3 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-colors"
                 >
                   <ChevronLeft size={56} />
                 </button>
@@ -239,7 +239,7 @@ export default function PhotoGallery({ gallery }: PhotoGalleryProps) {
                     e.stopPropagation();
                     nextPhoto();
                   }}
-                  className="hidden md:flex absolute right-3 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-colors"
+                  className="cursor-pointer hidden md:flex absolute right-3 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-colors"
                 >
                   <ChevronRight size={56} />
                 </button>

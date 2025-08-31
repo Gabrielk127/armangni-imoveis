@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { getPropertyBySlug } from "@/services/propertyService";
+import Header from "@/components/header/header";
 import HeroSection from "@/components/hero-section";
 import PropertyDetails from "@/components/property-details";
 import PhotoGallery from "@/components/photo-gallery";
@@ -7,8 +8,8 @@ import LocationSection from "@/components/location-section";
 import PropertyValue from "@/components/property-value";
 import CondominiumInfo from "@/components/condominium-info";
 import VideoSection from "@/components/video-section";
-import ContactForm from "@/components/contact-form";
 import FloatingWhatsAppButton from "@/components/floating-whatsapp-button";
+import ContactSection from "@/components/contact-form";
 
 interface PageProps {
   params: Promise<{
@@ -32,8 +33,9 @@ export default async function PropertyPage({ params }: PageProps) {
 
     return (
       <main className="min-h-screen bg-gray-50">
+        <Header />
         <FloatingWhatsAppButton
-          phoneNumber="5543998377239"
+          phoneNumber="5543991807520"
           whatsappMessage={property.whatsappMessage}
         />
         <HeroSection
@@ -68,7 +70,7 @@ export default async function PropertyPage({ params }: PageProps) {
             sectionDescription={property.video.sectionDescription}
           />
         )}
-        <ContactForm />
+        <ContactSection conversionIdentifier={property.slug} />
       </main>
     );
   } catch (error) {

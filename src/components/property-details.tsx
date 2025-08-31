@@ -58,7 +58,7 @@ export default function PropertyDetails({
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-12">
           {features.map((feature, index) => (
             <motion.div
-              key={feature.label}
+              key={`${feature.label}-${index}`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -98,7 +98,7 @@ export default function PropertyDetails({
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {amenitiesList.map((amenity: string, index: number) => (
                 <motion.div
-                  key={amenity}
+                  key={`${amenity}-${index}`}
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}

@@ -1,84 +1,57 @@
-import {
-  collection,
-  serverTimestamp,
-  getDocs,
-  query,
-  where,
-  limit,
-  getDoc,
-  doc,
-  orderBy,
-  runTransaction,
-} from "firebase/firestore";
-import { db } from "@/lib/firebase";
+// src/services/propertyService.ts
+
+import { FieldValue } from "firebase-admin/firestore";
+import type { QueryDocumentSnapshot, DocumentData } from "firebase-admin/firestore";
+import { dbAdmin } from "@/lib/firebaseAdmin"; // <-- Importa a instância do ADMIN
 import { Property, PropertyData } from "@/types";
 
-async function getNextPropertyId(): Promise<number> {
-  //Ainda está com id incremental, vou fazer com slug
-  try {
-    const propertiesCollection = collection(db, "properties");
-
-    const q = query(propertiesCollection, orderBy("id", "desc"), limit(1));
-    const querySnapshot = await getDocs(q);
-
-    if (querySnapshot.empty) {
-      return 1;
-    }
-
-    const lastDoc = querySnapshot.docs[0];
-    const lastId = lastDoc.data().id as number;
-    return lastId + 1;
-  } catch (error) {
-    console.error("Erro ao buscar próximo ID:", error);
-    return 1;
-  }
-}
-
+// Criar um novo imóvel usando o SLUG como ID
 export async function createProperty(propertyData: PropertyData) {
   try {
-    const result = await runTransaction(db, async (transaction) => {
-      const nextId = await getNextPropertyId();
+    // Obtém a instância do Firestore
+    const db = dbAdmin();
+    const propertiesCollection = db.collection("properties");
 
-      const docRef = doc(db, "properties", nextId.toString());
+    // Usa o slug como o ID único do documento
+    const docRef = propertiesCollection.doc(propertyData.slug);
 
-      const docSnapshot = await transaction.get(docRef);
-      if (docSnapshot.exists()) {
-        throw new Error("Conflito de ID: documento já existe");
-      }
+    const newProperty = {
+      ...propertyData,
+      createdAt: FieldValue.serverTimestamp(), // Timestamp do servidor
+    };
 
-      const newProperty = {
-        id: nextId,
-        ...propertyData,
-        createdAt: serverTimestamp(),
-      };
+    // 'set' cria o documento com o ID (slug) especificado
+    await docRef.set(newProperty);
 
-      transaction.set(docRef, newProperty);
-
-      return nextId;
-    });
-
-    console.log("Imóvel criado com sucesso! ID:", result);
-    return result.toString();
+    console.log("Imóvel criado com sucesso! Slug:", propertyData.slug);
+    return propertyData.slug;
   } catch (error) {
     console.error("Erro ao criar imóvel:", error);
     throw new Error("Não foi possível criar o imóvel.");
   }
 }
 
+// Buscar todos os imóveis
 export async function getProperties(): Promise<Property[]> {
   try {
-    const propertiesCollection = collection(db, "properties");
-    const q = query(propertiesCollection, orderBy("id", "asc"));
-    const querySnapshot = await getDocs(q);
+    // Obtém a instância do Firestore
+    const db = dbAdmin();
+    const propertiesCollection = db.collection("properties");
+
+    const q = propertiesCollection.orderBy("createdAt", "desc"); // Ordena pelos mais recentes
+    const querySnapshot = await q.get();
 
     if (querySnapshot.empty) {
       return [];
     }
 
-    const properties: Property[] = querySnapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...(doc.data() as PropertyData),
-    }));
+    // Mapeia os documentos para o tipo Property
+    const properties: Property[] = querySnapshot.docs.map(
+      (doc: QueryDocumentSnapshot<DocumentData>) => ({
+        id: doc.id, // O ID agora é o slug
+        ...(doc.data() as PropertyData),
+      }),
+    );
 
     return properties;
   } catch (error) {
@@ -87,37 +60,18 @@ export async function getProperties(): Promise<Property[]> {
   }
 }
 
+// Buscar um imóvel pelo seu slug
 export async function getPropertyBySlug(slug: string): Promise<Property | null> {
   try {
-    // slug para usar no futuro
-    const propertiesCollection = collection(db, "properties");
-    const q = query(propertiesCollection, where("slug", "==", slug), limit(1));
-    const querySnapshot = await getDocs(q);
+    // Obtém a instância do Firestore
+    const db = dbAdmin();
+    const propertiesCollection = db.collection("properties");
 
-    if (querySnapshot.empty) {
+    const docRef = propertiesCollection.doc(slug);
+    const docSnapshot = await docRef.get();
+
+    if (!docSnapshot.exists) {
       console.warn(`Nenhum imóvel encontrado com o slug: ${slug}`);
-      return null;
-    }
-
-    const propertyDoc = querySnapshot.docs[0];
-
-    return {
-      id: propertyDoc.id,
-      ...(propertyDoc.data() as PropertyData),
-    };
-  } catch (error) {
-    console.error("Erro ao buscar imóvel por slug:", error);
-    throw new Error("Não foi possível buscar o imóvel.");
-  }
-}
-
-export async function getPropertyById(id: number): Promise<Property | null> {
-  try {
-    const docRef = doc(db, "properties", id.toString());
-    const docSnapshot = await getDoc(docRef);
-
-    if (!docSnapshot.exists()) {
-      console.warn(`Nenhum imóvel encontrado com o ID: ${id}`);
       return null;
     }
 
@@ -126,7 +80,7 @@ export async function getPropertyById(id: number): Promise<Property | null> {
       ...(docSnapshot.data() as PropertyData),
     };
   } catch (error) {
-    console.error("Erro ao buscar imóvel por ID:", error);
+    console.error("Erro ao buscar imóvel por slug:", error);
     throw new Error("Não foi possível buscar o imóvel.");
   }
 }

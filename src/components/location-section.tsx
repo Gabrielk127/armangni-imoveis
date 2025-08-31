@@ -38,7 +38,7 @@ export default function LocationSection({ locationData }: LocationSectionProps) 
     locationData?.sectionDescription || "No coração de Ibiporã, próximo a tudo que você precisa";
   const googleMapsUrl =
     locationData?.googleMapsUrl ||
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.123456789!2d-51.0123456!3d-23.2654321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDE1JzU1LjYiUyA1McKwMDAnNDQuNCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123";
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3663.0453060605437!2d-51.21208849999999!3d-23.3503731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb5cf268312f79%3A0xedc7a2398aa01715!2sRoyal%20Park%20Residence%2C%20Londrina%20-%20PR!5e0!3m2!1spt-BR!2sbr!4v1756302733536!5m2!1spt-BR!2sbr";
   const address =
     locationData?.address ||
     "Rua das Flores, 123 - Condomínio Residencial Jardins\nIbiporã - PR, 86200-000";

@@ -16,147 +16,137 @@ export default function CreatePropertyButton() {
     setIsError(false);
 
     const propertyJsonData: PropertyData = {
-      slug: `casa-dos-sonhos-condominio-jardins-ibipora-${Date.now()}`,
-      pageTitle: "Casa dos Sonhos à Venda em Ibiporã | Condomínio Jardins",
-      whatsappMessage:
-        "Olá! Tenho interesse na 'Casa dos Sonhos em Ibiporã' que vi no site e gostaria de agendar uma visita ou obter mais informações.",
+      slug: `CA0033-royal-park-londrina-pr`,
+      pageTitle: "Casa de Alto Padrão à Venda",
+      whatsappMessage: `Olá! Tenho interesse na casa no Condomínio Royal Park que vi na landing page e gostaria de agendar uma visita ou obter mais informações.`,
       pageDescription:
-        "Luxo, conforto e uma localização privilegiada. Conheça esta incrível casa de alto padrão no Condomínio Residencial Jardins, um dos bairros mais valorizados de Ibiporã.",
+        "Oportunidade no Royal Park, Zona Sul de Londrina. Casa com 4 suítes, 400m² de área útil, piscina privativa e lazer completo no condomínio. Conforto e sofisticação.",
       headerImage:
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210401/tb7zqeekggtz6t074l8h.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210216/dntxsscyzypl2grydydz.jpg",
       gallery: [
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210401/tb7zqeekggtz6t074l8h.jpg",
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210401/tb7zqeekggtz6t074l8h.jpg",
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210401/tb7zqeekggtz6t074l8h.jpg",
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210401/tb7zqeekggtz6t074l8h.jpg",
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210401/tb7zqeekggtz6t074l8h.jpg",
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210401/tb7zqeekggtz6t074l8h.jpg",
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210401/tb7zqeekggtz6t074l8h.jpg",
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210401/tb7zqeekggtz6t074l8h.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210214/x7ogsq9fitazocsbyfae.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210214/ohjogkzck5elxxeglmix.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210215/lwdqxfcmiuu2msbagpap.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210215/zhrk2ylekfmuizg1pvxd.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210217/wtaessqsyr93unrpaavx.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210218/woeqimawjqf5k3cnnq4s.jpg",
       ],
       hero: {
-        title: "Casa dos Sonhos à Venda em Ibiporã | Condomínio Jardins",
+        title: "Casa de Alto Padrão à Venda no Condomínio Royal Park",
         subtitle:
-          "Luxo, conforto e uma localização privilegiada. Conheça esta incrível casa de alto padrão no Condomínio Residencial Jardins, um dos bairros mais valorizados de Ibiporã.",
+          "Conforto e requinte em cada detalhe, com 4 suítes espaçosas, área gourmet e um complexo de lazer incrível.",
       },
       details: {
         sectionTitle: "Detalhes que Fazem a Diferença",
         sectionDescription:
           "Cada metro quadrado foi pensado para oferecer o máximo de conforto e sofisticação para você e sua família.",
         subtitle:
-          "Cada metro quadrado foi pensado para oferecer o máximo de conforto e sofisticação para você e sua família.",
+          "O espaço foi projetado para oferecer conforto, com móveis planejados e um ambiente harmonioso.",
         paragraphs: [
-          "Esta residência de alto padrão é a definição de morar bem. Com um design moderno e acabamentos de primeira linha, ela oferece ambientes amplos e integrados, ideais para receber amigos e familiares.",
-          "A área externa é um convite ao lazer, com uma piscina aquecida e uma churrasqueira gourmet completa. A casa já conta com armários planejados em todos os cômodos, sistema de segurança e aquecimento solar, unindo praticidade e sustentabilidade.",
+          "Esta residência de alto padrão é a definição de morar bem. Com um design moderno e acabamentos de primeira linha, ela oferece uma sala ampla com 2 ambientes, ideal para receber amigos e familiares.",
+          "A área externa é um convite ao lazer, com uma piscina privativa e uma área gourmet. A casa já conta com móveis planejados, aquecimento solar e energia fotovoltaica, unindo praticidade e sustentabilidade.",
         ],
         descriptionTitle: "Sobre o Imóvel",
         differentiators: [
-          "Piscina aquecida",
-          "Churrasqueira gourmet",
-          "Armários planejados",
-          "Jardim com paisagismo",
-          "Sistema de segurança",
-          "Aquecimento solar",
+          "Piscina privativa",
+          "Área Gourmet",
+          "Aquecimento Solar",
+          "Energia Fotovoltaica",
+          "Móveis Planejados",
+          "04 Suítes espaçosas",
+          "Escritório Privativo",
         ],
       },
       video: {
-        title: "Tour Virtual - Casa dos Sonhos",
-        subtitle: "Faça um tour virtual e apaixone-se por cada detalhe desta casa espetacular.",
-        videoUrl: "https://www.youtube.com/embed/13eja_RYimU",
+        title: "Tour pelo imóvel",
+        subtitle: "Faça um tour e apaixone-se por cada detalhe desta casa espetacular.",
+        videoUrl: "https://youtu.be/KoobhxZXp_w",
         description:
           "Explore cada ambiente desta propriedade única através do nosso tour virtual em alta definição",
-        sectionDescription:
-          "Faça um tour virtual e apaixone-se por cada detalhe desta casa espetacular.",
+        sectionDescription: "Apaixone-se por cada detalhe desta casa espetacular.",
       },
       investment: {
-        price: 850000,
-        priceFormatted: "R$ 850.000,00",
-        conditions: "À vista. Aceita financiamento bancário e parcelamento direto.",
+        price: 4800000,
+        priceFormatted: "R$ 4.800.000,00",
+        conditions: "Consulte as condições de pagamento.",
       },
       condominium: {
-        sectionTitle: "O Condomínio Residencial Jardins",
+        sectionTitle: "O Condomínio Royal Park",
         sectionDescription:
-          "Viva com segurança e qualidade de vida em um dos melhores condomínios da região.",
+          "Viva com segurança e qualidade de vida em um dos melhores condomínios da Zona Sul de Londrina.",
         image:
-          "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210401/tb7zqeekggtz6t074l8h.jpg",
+          "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210219/rwr41tkjiov3lyhktzgg.jpg",
         descriptionTitle: "Infraestrutura Completa para Sua Família",
         descriptionParagraphs: [
-          "O Condomínio Jardins é reconhecido por sua segurança impecável e sua completa estrutura de lazer. Aqui, você encontra tudo o que precisa para viver momentos inesquecíveis.",
+          "O Condomínio Royal Park é reconhecido por sua segurança e sua completa estrutura de lazer, incluindo um complexo de piscinas, bosque com lago e diversas quadras esportivas.",
         ],
         amenities: [
           { icon: "shield-check", label: "Segurança 24h" },
-          { icon: "dumbbell", label: "Academia" },
-          { icon: "cake", label: "Salão de Festas" },
-          { icon: "car", label: "Estacionamento para Visitantes" },
-          { icon: "water", label: "Piscina" },
-          { icon: "tree", label: "Área Verde" },
+          { icon: "water", label: "Complexo de Piscinas" },
+          { icon: "tree", label: "Bosque com Lago" },
+          { icon: "swatch-book", label: "Quadra de Tênis" },
+          { icon: "sun", label: "Quadra de Beach Tennis" },
+          { icon: "dribbble", label: "Quadra Poliesportiva" },
         ],
       },
-      // Dados de localização para uso no LocationSection
       location: {
         sectionDescription:
-          "Localizado em uma área nobre de Ibiporã, com fácil acesso aos principais pontos da cidade.",
+          "Localizado na nobre Zona Sul de Londrina, uma região em pleno desenvolvimento e com alto potencial de valorização.",
         googleMapsUrl:
-          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14697.123456789!2d-51.0423456!3d-23.2654321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eced0b135c6ea1%3A0xc123456789abcdef!2sIbipor%C3%A3%2C%20PR%2C%20Brasil!5e0!3m2!1spt-BR!2sbr!4v1706123456789",
-        address: "Condomínio Residencial Jardins\nIbiporã - PR, 86200-000",
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3663.0453060605437!2d-51.21208849999999!3d-23.3503731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb5cf268312f79%3A0xedc7a2398aa01715!2sRoyal%20Park%20Residence%2C%20Londrina%20-%20PR!5e0!3m2!1spt-BR!2sbr!4v1756302733536!5m2!1spt-BR!2sbr",
+        address: "Av. Gil de Abreu e Souza, 1770 - Royal Park Residence, Londrina - PR, 86058-100",
         nearbyPoints: [
-          { icon: "school", label: "Colégio Estadual de Ibiporã", distance: "5 min" },
-          { icon: "hospital", label: "Hospital Municipal", distance: "7 min" },
-          { icon: "shopping-cart", label: "Supermercado Condor", distance: "3 min" },
-          { icon: "store", label: "Centro Comercial", distance: "10 min" },
+          { icon: "shopping-cart", label: "Shopping Catuaí", distance: "5 min" },
+          { icon: "hospital", label: "Hospital do Coração", distance: "8 min" },
+          { icon: "school", label: "Colégios de Referência", distance: "10 min" },
+          { icon: "store", label: "Supermercados", distance: "3 min" },
         ],
         advantages: [
-          "Bairro mais valorizado da cidade",
-          "Acesso rápido à BR-369 e PR-445",
-          "Rua tranquila e completamente arborizada",
-          "Proximidade com Londrina (15 min)",
+          "Localização em pleno desenvolvimento",
+          "Região Nobre (Zona Sul)",
+          "Vizinho de novos condomínios de expressão nacional",
+          "Alto potencial de valorização",
         ],
       },
-      bedrooms: 10,
-      bathrooms: 3,
-      garageSpots: 2,
-      suites: 2,
-      totalArea: 450,
-      builtArea: 320,
+      bedrooms: 4,
+      bathrooms: 5,
+      garageSpots: 3,
+      suites: 4,
+      totalArea: 625,
+      builtArea: 400,
       displayFeatures: [
         {
-          label: "Área Total",
-          value: "450m²",
+          label: "(total) Terreno",
+          value: "625m²",
           iconId: "home",
         },
         {
           label: "Área Construída",
-          value: "320m²",
+          value: "400m²",
           iconId: "maximize",
         },
         {
-          label: "Quartos",
-          value: "10",
-          iconId: "users",
-        },
-        {
           label: "Suítes",
-          value: "2",
+          value: "4",
           iconId: "waves",
         },
         {
           label: "Banheiros",
-          value: "3",
+          value: "5",
           iconId: "bath",
         },
         {
           label: "Vagas",
-          value: "2",
+          value: "3",
           iconId: "car",
         },
       ],
       amenities: [
-        "Piscina aquecida",
-        "Churrasqueira gourmet",
-        "Armários planejados",
-        "Jardim com paisagismo",
-        "Sistema de segurança",
-        "Aquecimento solar",
+        "Piscina privativa",
+        "Área Gourmet",
+        "Aquecimento Solar",
+        "Energia Fotovoltaica",
+        "Móveis Planejados",
       ],
     };
 
@@ -175,13 +165,11 @@ export default function CreatePropertyButton() {
         throw new Error(result.message || "Ocorreu um erro na API.");
       }
 
-      // 5. Se tudo deu certo, atualiza a mensagem de status com sucesso
       setStatusMessage(`Sucesso! Casa dos Sonhos criada: ${propertyJsonData.slug}`);
 
-      // Opcional: Redirecionar para a página do imóvel criado
       setTimeout(() => {
         window.location.href = `/imovel/${propertyJsonData.slug}`;
-      }, 2000); // Aguarda 2 segundos para o usuário ver a mensagem
+      }, 2000);
     } catch (error: unknown) {
       setIsError(true);
       const errorMessage =
@@ -205,7 +193,6 @@ export default function CreatePropertyButton() {
         {isLoading ? "Criando Casa" : "Criar"}
       </button>
 
-      {/* Área para exibir mensagens de feedback */}
       {statusMessage && (
         <p className={`text-sm ${isError ? "text-red-500" : "text-green-500"}`}>{statusMessage}</p>
       )}

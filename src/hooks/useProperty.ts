@@ -2,16 +2,16 @@
 
 import { useState, useEffect } from "react";
 import { Property } from "@/types";
-import { getProperties, getPropertyById } from "@/services/propertyService";
+// importações removidas, pois não devem ser usadas no client
 
-export function useProperty(id?: number) {
+export function useProperty(slug?: string) {
   const [property, setProperty] = useState<Property | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     async function fetchProperty() {
-      if (!id) {
+      if (!slug) {
         setLoading(false);
         return;
       }
@@ -19,8 +19,10 @@ export function useProperty(id?: number) {
       try {
         setLoading(true);
         setError(null);
-        const data = await getPropertyById(id);
-        setProperty(data);
+        const response = await fetch(`/api/properties/${slug}`);
+        if (!response.ok) throw new Error("Erro ao buscar imóvel");
+        const data = await response.json();
+        setProperty(data.property);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Erro ao buscar imóvel");
         console.error("Erro ao buscar imóvel:", err);
@@ -30,7 +32,7 @@ export function useProperty(id?: number) {
     }
 
     fetchProperty();
-  }, [id]);
+  }, [slug]);
 
   return { property, loading, error };
 }
@@ -45,8 +47,10 @@ export function useProperties() {
       try {
         setLoading(true);
         setError(null);
-        const data = await getProperties();
-        setProperties(data);
+        const response = await fetch("/api/properties");
+        if (!response.ok) throw new Error("Erro ao buscar imóveis");
+        const data = await response.json();
+        setProperties(data.properties || data);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Erro ao buscar imóveis");
         console.error("Erro ao buscar imóveis:", err);
@@ -62,8 +66,10 @@ export function useProperties() {
     try {
       setLoading(true);
       setError(null);
-      const data = await getProperties();
-      setProperties(data);
+      const response = await fetch("/api/properties");
+      if (!response.ok) throw new Error("Erro ao buscar imóveis");
+      const data = await response.json();
+      setProperties(data.properties || data);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Erro ao buscar imóveis");
       console.error("Erro ao buscar imóveis:", err);

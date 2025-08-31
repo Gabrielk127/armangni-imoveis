@@ -39,25 +39,16 @@ export default function PropertyValue({ investmentData }: PropertyValueProps) {
           <div className="text-center p-6 bg-[#1C1C1C] rounded-lg shadow-sm">
             <CreditCard className="w-8 h-8 mx-auto mb-3 text-[#BFB4AA]" />
             <h4 className="font-semibold text-white mb-2">Financiamento</h4>
-            <p className="text-sm text-[#c9ccd0]">
-              Aceita financiamento bancário com entrada a partir de 20%
-            </p>
           </div>
 
           <div className="text-center p-6 bg-[#1C1C1C] rounded-lg shadow-sm">
             <Calendar className="w-8 h-8 mx-auto mb-3 text-[#BFB4AA]" />
             <h4 className="font-semibold text-white mb-2">Parcelamento</h4>
-            <p className="text-sm text-[#c9ccd0]">
-              Possibilidade de parcelamento direto com o proprietário
-            </p>
           </div>
 
           <div className="text-center p-6 bg-[#1C1C1C] rounded-lg shadow-sm">
             <TrendingUp className="w-8 h-8 mx-auto mb-3 text-[#BFB4AA]" />
             <h4 className="font-semibold text-white mb-2">Valorização</h4>
-            <p className="text-sm text-[#c9ccd0]">
-              Região em constante valorização com alta demanda
-            </p>
           </div>
         </div>
 

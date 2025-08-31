@@ -1,3 +1,4 @@
+"use client";
 import DesktopMenu from "./desktop-menu";
 import MobileMenu from "./mobile-menu";
 
