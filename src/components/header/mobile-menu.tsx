@@ -3,7 +3,11 @@ import { motion, AnimatePresence, Variants } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi"; // Ícones de menu e X
 import Image from "next/image";
 
-const MobileMenu = () => {
+interface MobileMenuProps {
+  hasCondominium?: boolean;
+}
+
+const MobileMenu = ({ hasCondominium = true }: MobileMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -97,7 +101,7 @@ const MobileMenu = () => {
                 "Início",
                 "Galeria",
                 "Imóvel",
-                "Condomínio",
+                ...(hasCondominium ? ["Condomínio"] : []),
                 "Vídeo",
                 // "Redes Sociais",
               ].map((item, index) => (

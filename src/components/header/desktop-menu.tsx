@@ -2,16 +2,25 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-// import CreatePropertyButton from "../CreatePropertyButton";
+import CreatePropertyButton from "../CreatePropertyButton";
 
-const DesktopMenu = () => {
-  const menuItems = [
+interface DesktopMenuProps {
+  hasCondominium?: boolean;
+}
+
+const DesktopMenu = ({ hasCondominium = true }: DesktopMenuProps) => {
+  const allMenuItems = [
     { label: "Início", href: "#inicio" },
     { label: "Galeria", href: "#galeria" },
     { label: "Imóvel", href: "#imovel" },
     { label: "Condomínio", href: "#condominio" },
     { label: "Vídeo", href: "#video" },
   ];
+
+  // Filtrar o item Condomínio se não houver dados de condomínio
+  const menuItems = hasCondominium
+    ? allMenuItems
+    : allMenuItems.filter((item) => item.label !== "Condomínio");
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-opacity-30 backdrop-blur-lg shadow-lg py-4 max-w-[1200px] rounded-3xl mx-auto mt-4">
@@ -25,7 +34,7 @@ const DesktopMenu = () => {
             <Image src="/logo-branco.png" width={200} height={200} alt="Logo da ax" />
           </Link>
         </motion.div>
-        {/* <CreatePropertyButton /> */}
+        <CreatePropertyButton />
 
         {/* Menu Links */}
         <nav className="hidden md:flex space-x-8">

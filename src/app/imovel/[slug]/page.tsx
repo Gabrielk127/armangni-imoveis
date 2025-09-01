@@ -33,7 +33,7 @@ export default async function PropertyPage({ params }: PageProps) {
 
     return (
       <main className="min-h-screen bg-gray-50">
-        <Header />
+        <Header hasCondominium={!!property.condominium} />
         <FloatingWhatsAppButton
           phoneNumber="5543991807520"
           whatsappMessage={property.whatsappMessage}
