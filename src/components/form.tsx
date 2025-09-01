@@ -49,8 +49,7 @@ export default function Form({ conversionIdentifier }: FormProps) {
 
     try {
       const response = await fetch(
-        "https://api.rd.services/platform/conversions?api_key=" +
-          process.env.NEXT_PUBLIC_RD_STATION_TOKEN,
+        "https://api.rd.services/platform/conversions?api_key=" + process.env.RD_STATION_TOKEN,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
