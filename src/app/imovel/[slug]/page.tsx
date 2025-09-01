@@ -60,7 +60,7 @@ export default async function PropertyPage({ params }: PageProps) {
         <PhotoGallery gallery={property.gallery} />
         <LocationSection locationData={property.location} />
         <PropertyValue investmentData={property.investment} />
-        <CondominiumInfo condominiumData={property.condominium} />
+        {property.condominium && <CondominiumInfo condominiumData={property.condominium} />}
         {property.video?.videoUrl && (
           <VideoSection
             title={property.video.title}
