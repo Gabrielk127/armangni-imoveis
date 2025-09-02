@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Home, Bath, Car, Maximize, Users, Waves } from "lucide-react";
+import { Home, Bath, Car, Maximize, Users, ShowerHead } from "lucide-react";
 import SectionTitle from "@/components/ui/section-title";
 
 interface PropertyDetailsProps {
@@ -13,6 +13,7 @@ interface PropertyDetailsProps {
   suites?: number;
   totalArea?: number;
   builtArea?: number;
+
   displayFeatures?: {
     label: string;
     value: string;
@@ -37,9 +38,9 @@ export default function PropertyDetails({
     { icon: Home, label: "Área Total", value: `${totalArea || 0}m²` },
     { icon: Maximize, label: "Área Construída", value: `${builtArea || 0}m²` },
     { icon: Users, label: "Quartos", value: `${bedrooms || 0} quartos` },
-    { icon: Bath, label: "Banheiros", value: `${bathrooms || 0} banheiros` },
+    { icon: ShowerHead, label: "Banheiros", value: `${bathrooms || 0} banheiros` },
     { icon: Car, label: "Garagem", value: `${garageSpots || 0} vagas` },
-    { icon: Waves, label: "Suítes", value: `${suites || 0} suítes` },
+    { icon: Bath, label: "Suítes", value: `${suites || 0} suítes` },
   ];
 
   const amenitiesList = amenities && amenities.length > 0 ? amenities : [" ", "", "", "", "", ""];

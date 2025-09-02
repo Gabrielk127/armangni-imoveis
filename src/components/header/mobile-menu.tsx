@@ -5,9 +5,10 @@ import Image from "next/image";
 
 interface MobileMenuProps {
   hasCondominium?: boolean;
+  hasVideo?: boolean;
 }
 
-const MobileMenu = ({ hasCondominium = true }: MobileMenuProps) => {
+const MobileMenu = ({ hasCondominium = true, hasVideo = true }: MobileMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -102,7 +103,7 @@ const MobileMenu = ({ hasCondominium = true }: MobileMenuProps) => {
                 "Galeria",
                 "Imóvel",
                 ...(hasCondominium ? ["Condomínio"] : []),
-                "Vídeo",
+                ...(hasVideo ? ["Vídeo"] : []),
                 // "Redes Sociais",
               ].map((item, index) => (
                 <motion.li

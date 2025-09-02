@@ -21,6 +21,13 @@ import {
   Dribbble,
   ChevronLeft,
   ChevronRight,
+  Gamepad2,
+  Rocket,
+  Wine,
+  UtensilsCrossed,
+  Building,
+  ArrowUp,
+  Dumbbell as Barbell,
 } from "lucide-react";
 import SectionTitle from "@/components/ui/section-title";
 import Image from "next/image";
@@ -32,10 +39,17 @@ interface CondominiumInfoProps {
 
 const iconMap = {
   "shield-check": ShieldCheck,
+  gamepad: Gamepad2,
+  barbell: Barbell,
+  rocket: Rocket,
+  water: Waves,
+  "glass-cheers": Wine,
+  utensils: UtensilsCrossed,
+  building: Building,
+  elevator: ArrowUp,
   dumbbell: Dumbbell,
   cake: Cake,
   car: Car,
-  water: Waves,
   tree: TreePine,
   school: School,
   hospital: Hospital,

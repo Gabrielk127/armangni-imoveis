@@ -16,118 +16,107 @@ export default function CreatePropertyButton() {
     setIsError(false);
 
     const propertyJsonData: PropertyData = {
-      slug: `CA0033-royal-park-londrina-pr`,
-      pageTitle: "Casa de Alto Padrão à Venda",
-      whatsappMessage: `Olá! Tenho interesse na casa no Condomínio Royal Park que vi na landing page e gostaria de agendar uma visita ou obter mais informações.`,
+      slug: "AP0169-casa-versage-cornelio-procopio-pr",
+      pageTitle: "Apartamento no Edifício Casa Versage | Cornélio Procópio",
+      whatsappMessage:
+        "Olá! Tenho interesse no apartamento no Edifício Casa Versage em Cornélio Procópio que vi no site e gostaria de mais informações.",
       pageDescription:
-        "Oportunidade no Royal Park, Zona Sul de Londrina. Casa com 4 suítes, 400m² de área útil, piscina privativa e lazer completo no condomínio. Conforto e sofisticação.",
+        "Apartamento na região mais nobre de Cornélio Procópio, 189m², 3 suítes, 5 banheiros, 3 vagas e sacada com churrasqueira. Condomínio com área de lazer completa.",
       headerImage:
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210216/dntxsscyzypl2grydydz.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756772243/q8bzhqsdk6eft3fihvud.jpg",
       gallery: [
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210214/x7ogsq9fitazocsbyfae.jpg",
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210214/ohjogkzck5elxxeglmix.jpg",
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210215/lwdqxfcmiuu2msbagpap.jpg",
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210215/zhrk2ylekfmuizg1pvxd.jpg",
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210217/wtaessqsyr93unrpaavx.jpg",
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210218/woeqimawjqf5k3cnnq4s.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756772244/mbppfuw7ljgzovu3cxgi.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756772243/verxdjxnhtwshsrc47ac.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756772243/utjmkihr5ldkoiit9efe.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756772243/s5rut7zzctcecchzz4dg.jpg",
       ],
       hero: {
-        title: "Casa de Alto Padrão à Venda no Condomínio Royal Park",
+        title: "Apartamento no Edifício Casa Versage",
         subtitle:
-          "Conforto e requinte em cada detalhe, com 4 suítes espaçosas, área gourmet e um complexo de lazer incrível.",
+          "Localizado na região mais nobre de Cornélio Procópio, com 3 suítes e lazer completo.",
       },
       details: {
-        sectionTitle: "Detalhes que Fazem a Diferença",
+        sectionTitle: "Detalhes do Apartamento",
         sectionDescription:
-          "Cada metro quadrado foi pensado para oferecer o máximo de conforto e sofisticação para você e sua família.",
-        subtitle:
-          "O espaço foi projetado para oferecer conforto, com móveis planejados e um ambiente harmonioso.",
+          "Um apartamento espaçoso e bem distribuído, ideal para quem busca conforto e sofisticação.",
+        subtitle: "Planta inteligente com 3 suítes e ambientes integrados.",
         paragraphs: [
-          "Esta residência de alto padrão é a definição de morar bem. Com um design moderno e acabamentos de primeira linha, ela oferece uma sala ampla com 2 ambientes, ideal para receber amigos e familiares.",
-          "A área externa é um convite ao lazer, com uma piscina privativa e uma área gourmet. A casa já conta com móveis planejados, aquecimento solar e energia fotovoltaica, unindo praticidade e sustentabilidade.",
+          "Este apartamento conta com 3 dormitórios, todos suítes, proporcionando máxima privacidade. A sala para 2 ambientes se conecta a uma ampla sacada com churrasqueira, perfeita para receber convidados.",
+          "A cozinha é funcional e a área de serviço é separada. Com um total de 5 banheiros e 3 vagas de garagem, o imóvel atende confortavelmente às necessidades de toda a família.",
         ],
         descriptionTitle: "Sobre o Imóvel",
         differentiators: [
-          "Piscina privativa",
-          "Área Gourmet",
-          "Aquecimento Solar",
-          "Energia Fotovoltaica",
-          "Móveis Planejados",
-          "04 Suítes espaçosas",
-          "Escritório Privativo",
+          "03 Suítes",
+          "Sacada com Churrasqueira",
+          "Sala 02 Ambientes",
+          "05 Banheiros",
+          "03 Vagas de Garagem",
         ],
       },
-      video: {
-        title: "Tour pelo imóvel",
-        subtitle: "Faça um tour e apaixone-se por cada detalhe desta casa espetacular.",
-        videoUrl: "https://youtu.be/KoobhxZXp_w",
-        description:
-          "Explore cada ambiente desta propriedade única através do nosso tour virtual em alta definição",
-        sectionDescription: "Apaixone-se por cada detalhe desta casa espetacular.",
-      },
       investment: {
-        price: 4800000,
-        priceFormatted: "R$ 4.800.000,00",
+        price: 1400000,
+        priceFormatted: "R$ 1.400.000,00",
         conditions: "Consulte as condições de pagamento.",
       },
       condominium: {
-        sectionTitle: "O Condomínio Royal Park",
+        sectionTitle: "O Edifício Casa Versage",
         sectionDescription:
-          "Viva com segurança e qualidade de vida em um dos melhores condomínios da Zona Sul de Londrina.",
+          "More com exclusividade na região mais nobre de Cornélio, com uma infraestrutura de lazer completa e moderna.",
         image:
-          "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210219/rwr41tkjiov3lyhktzgg.jpg",
-        descriptionTitle: "Infraestrutura Completa para Sua Família",
+          "https://res.cloudinary.com/dhptebqcq/image/upload/v1756772498/euwg9q4qv3thtrqcwilu.jpg",
+        descriptionTitle: "Área de Lazer Completa",
         descriptionParagraphs: [
-          "O Condomínio Royal Park é reconhecido por sua segurança e sua completa estrutura de lazer, incluindo um complexo de piscinas, bosque com lago e diversas quadras esportivas.",
+          "A área de lazer é distribuída em dois pavimentos (térreo e intermediário), oferecendo diversas opções para entretenimento e bem-estar de toda a família.",
         ],
         amenities: [
           { icon: "shield-check", label: "Segurança 24h" },
-          { icon: "water", label: "Complexo de Piscinas" },
-          { icon: "tree", label: "Bosque com Lago" },
-          { icon: "swatch-book", label: "Quadra de Tênis" },
-          { icon: "sun", label: "Quadra de Beach Tennis" },
-          { icon: "dribbble", label: "Quadra Poliesportiva" },
+          { icon: "gamepad", label: "Sala de Jogos" },
+          { icon: "barbell", label: "Academia (Fitness)" },
+          { icon: "rocket", label: "Playground" },
+          { icon: "water", label: "Piscina" },
+          { icon: "glass-cheers", label: "Sport Lounge" },
+          { icon: "utensils", label: "Espaço Gourmet" },
+          { icon: "building", label: "Terraço Descoberto" },
+          { icon: "elevator", label: "3 Elevadores" },
         ],
       },
       location: {
         sectionDescription:
-          "Localizado na nobre Zona Sul de Londrina, uma região em pleno desenvolvimento e com alto potencial de valorização.",
+          "Localização privilegiada na Av. Nossa Sra. do Rocio, a região mais nobre de Cornélio Procópio.",
         googleMapsUrl:
-          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3663.0453060605437!2d-51.21208849999999!3d-23.3503731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb5cf268312f79%3A0xedc7a2398aa01715!2sRoyal%20Park%20Residence%2C%20Londrina%20-%20PR!5e0!3m2!1spt-BR!2sbr!4v1756302733536!5m2!1spt-BR!2sbr",
-        address: "Av. Gil de Abreu e Souza, 1770 - Royal Park Residence, Londrina - PR, 86058-100",
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d871.5464852255794!2d-50.656215!3d-23.182655999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eadf3fcda5f8cd%3A0x1f13e429e2eb515!2sAv.%20Nossa%20Sra.%20do%20Rocio%2C%20910%20-%20Corn%C3%A9lio%20Proc%C3%B3pio%2C%20PR%2C%2086300-000!5e1!3m2!1spt-BR!2sbr!4v1756771814607!5m2!1spt-BR!2sbr",
+        address: "Av. Nossa Sra. do Rocio, 910 - Cornélio Procópio, PR",
         nearbyPoints: [
-          { icon: "shopping-cart", label: "Shopping Catuaí", distance: "5 min" },
-          { icon: "hospital", label: "Hospital do Coração", distance: "8 min" },
-          { icon: "school", label: "Colégios de Referência", distance: "10 min" },
-          { icon: "store", label: "Supermercados", distance: "3 min" },
+          { icon: "store", label: "Centro da Cidade", distance: "Prox." },
+          { icon: "shopping-cart", label: "Supermercados", distance: "Prox." },
+          { icon: "university", label: "UTFPR", distance: "Prox." },
         ],
         advantages: [
-          "Localização em pleno desenvolvimento",
-          "Região Nobre (Zona Sul)",
-          "Vizinho de novos condomínios de expressão nacional",
-          "Alto potencial de valorização",
+          "Região mais nobre de Cornélio",
+          "Fácil acesso a comércios e serviços",
+          "Infraestrutura de lazer completa",
         ],
       },
-      bedrooms: 4,
+      bedrooms: 3,
       bathrooms: 5,
       garageSpots: 3,
-      suites: 4,
-      totalArea: 625,
-      builtArea: 400,
+      suites: 3,
+      totalArea: 189.82,
+      builtArea: 77.82,
       displayFeatures: [
         {
-          label: "(total) Terreno",
-          value: "625m²",
-          iconId: "home",
-        },
-        {
-          label: "Área Construída",
-          value: "400m²",
+          label: "Área Privativa",
+          value: "189,82m²",
           iconId: "maximize",
         },
         {
+          label: "Quartos",
+          value: "3",
+          iconId: "users",
+        },
+        {
           label: "Suítes",
-          value: "4",
+          value: "3",
           iconId: "waves",
         },
         {
@@ -141,13 +130,7 @@ export default function CreatePropertyButton() {
           iconId: "car",
         },
       ],
-      amenities: [
-        "Piscina privativa",
-        "Área Gourmet",
-        "Aquecimento Solar",
-        "Energia Fotovoltaica",
-        "Móveis Planejados",
-      ],
+      amenities: ["Sacada com Churrasqueira", "Sala 02 Ambientes"],
     };
 
     try {

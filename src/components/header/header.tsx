@@ -4,16 +4,17 @@ import MobileMenu from "./mobile-menu";
 
 interface HeaderProps {
   hasCondominium?: boolean;
+  hasVideo?: boolean;
 }
 
-const Header = ({ hasCondominium = true }: HeaderProps) => {
+const Header = ({ hasCondominium = true, hasVideo = true }: HeaderProps) => {
   return (
     <div>
       <div className="md:hidden">
-        <MobileMenu hasCondominium={hasCondominium} />
+        <MobileMenu hasCondominium={hasCondominium} hasVideo={hasVideo} />
       </div>
       <div className="hidden md:flex">
-        <DesktopMenu hasCondominium={hasCondominium} />
+        <DesktopMenu hasCondominium={hasCondominium} hasVideo={hasVideo} />
       </div>
     </div>
   );
