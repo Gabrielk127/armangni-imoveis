@@ -28,6 +28,9 @@ import {
   Building,
   ArrowUp,
   Dumbbell as Barbell,
+  Package,
+  Bike,
+  Flame,
 } from "lucide-react";
 import SectionTitle from "@/components/ui/section-title";
 import Image from "next/image";
@@ -43,10 +46,13 @@ const iconMap = {
   barbell: Barbell,
   rocket: Rocket,
   water: Waves,
+  fire: Flame,
   "glass-cheers": Wine,
   utensils: UtensilsCrossed,
   building: Building,
   elevator: ArrowUp,
+  package: Package,
+  bicycle: Bike,
   dumbbell: Dumbbell,
   cake: Cake,
   car: Car,

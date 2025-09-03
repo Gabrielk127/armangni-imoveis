@@ -35,27 +35,20 @@ export default function Form({ conversionIdentifier }: FormProps) {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const rdStationData = {
-      event_type: "CONVERSION",
-      event_family: "CDP",
-      payload: {
-        conversion_identifier: conversionIdentifier,
-        name: formData.name,
-        email: formData.email,
-        mobile_phone: formData.phone,
-        cf_mensagem: formData.message,
-      },
+    const requestData = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+      conversionIdentifier: conversionIdentifier,
     };
 
     try {
-      const response = await fetch(
-        "https://api.rd.services/platform/conversions?api_key=" + process.env.RD_STATION_TOKEN,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(rdStationData),
-        },
-      );
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(requestData),
+      });
 
       if (response.ok) {
         toast({
@@ -64,12 +57,14 @@ export default function Form({ conversionIdentifier }: FormProps) {
         });
         setFormData({ name: "", email: "", phone: "", message: "" });
       } else {
-        throw new Error("Falha ao enviar os dados.");
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Falha ao enviar os dados.");
       }
-    } catch {
+    } catch (error) {
       toast({
         title: "Ops! Algo deu errado.",
-        description: "Não foi possível enviar sua mensagem.",
+        description:
+          error instanceof Error ? error.message : "Não foi possível enviar sua mensagem.",
       });
     } finally {
       setIsSubmitting(false);

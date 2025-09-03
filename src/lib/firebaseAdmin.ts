@@ -51,7 +51,6 @@ function initializeFirebaseAdmin(): App {
     const existingApps = getApps();
     if (existingApps.length > 0) {
       adminApp = existingApps[0];
-      console.log("✅ Usando instância existente do Firebase Admin SDK");
       return adminApp;
     }
 

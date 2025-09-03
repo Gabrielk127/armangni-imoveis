@@ -3,7 +3,7 @@ import { type NextRequest, NextResponse } from "next/server";
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, phone, conversionIdentifier } = body;
+    const { name, email, phone, message, conversionIdentifier } = body;
 
     // Validate required fields
     if (!name || !email || !phone || !conversionIdentifier) {
@@ -37,6 +37,7 @@ export async function POST(request: NextRequest) {
         name: sanitizedData.name,
         email: sanitizedData.email,
         mobile_phone: sanitizedData.phone,
+        cf_mensagem: message || "", // Campo personalizado para a mensagem
       },
     };
 

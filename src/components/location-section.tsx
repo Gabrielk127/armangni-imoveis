@@ -1,7 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, School, Hospital, ShoppingCart, Coffee, Store } from "lucide-react";
+import {
+  MapPin,
+  School,
+  Hospital,
+  ShoppingCart,
+  Coffee,
+  Store,
+  Leaf,
+  ShoppingBag,
+  Bus,
+  GraduationCap,
+} from "lucide-react";
 import SectionTitle from "@/components/ui/section-title";
 import { PropertyData } from "@/types";
 
@@ -13,8 +24,12 @@ const iconMap = {
   school: School,
   hospital: Hospital,
   "shopping-cart": ShoppingCart,
+  "shopping-bag": ShoppingBag,
   store: Store,
   coffee: Coffee,
+  leaf: Leaf,
+  bus: Bus,
+  university: GraduationCap,
 } as const;
 
 // Dados padrão caso não venham do Firebase
