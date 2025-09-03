@@ -16,7 +16,7 @@ export default function CreatePropertyButton() {
     setIsError(false);
 
     const propertyJsonData: PropertyData = {
-      slug: "AP0009-florais-eco-resort-londrina-pr",
+      slug: "AP0177-florais-eco-resort-londrina-pr",
       pageTitle: "Apartamento no Florais Eco Resort | Gleba Palhano, Londrina",
       whatsappMessage:
         "Olá! Tenho interesse no apartamento 1701 no Florais Eco Resort, na Gleba Palhano, que vi no site e gostaria de mais informações. https://armangniimoveis.com.br/imovel/AP0009-florais-eco-resort-londrina-pr",
