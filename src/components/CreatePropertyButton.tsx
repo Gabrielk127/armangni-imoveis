@@ -16,140 +16,127 @@ export default function CreatePropertyButton() {
     setIsError(false);
 
     const propertyJsonData: PropertyData = {
-      slug: "AP0177-florais-eco-resort-londrina-pr",
-      pageTitle: "Apartamento no Florais Eco Resort | Gleba Palhano, Londrina",
+      slug: "TE0042-tambore-londrina-pr",
+      pageTitle: "Terreno à Venda no Condomínio Tamboré | Londrina",
       whatsappMessage:
-        "Olá! Tenho interesse no apartamento 1701 no Florais Eco Resort, na Gleba Palhano, que vi no site e gostaria de mais informações. https://armangniimoveis.com.br/imovel/AP0009-florais-eco-resort-londrina-pr",
+        "Olá! Tenho interesse no terreno de 412m² no lançamento do Tamboré Londrina que vi no site e gostaria de mais informações.   https://armangniimoveis.com.br/imovel/TE0042-tambore-londrina-pr",
       pageDescription:
-        "Apartamento de 75m² na Gleba Palhano, Florais Eco Resort. 3 quartos (1 suíte), completo em móveis planejados, 2 vagas. Lazer incomparável com piscinas, boliche, quadra de tênis e mais.",
+        "Lançamento Tamboré Londrina! Terreno de 412m² na Zona Sul, a 10 min do Catuaí. Condomínio com clube exclusivo de 45.000m², lagos, piscinas e segurança 24h.",
       headerImage:
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756901334/hqiwe6aupbzhcbko7jxj.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756989254/e5413eae-b1df-4a94-8b0d-c25fe2b70157.jpg",
       gallery: [
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756901335/w2p4jt6zmhmkzaes2dwt.jpg",
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756901334/va2l9yunqlpnclslpuup.jpg",
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756901334/nxyelc5dgzno9ailmyr0.jpg",
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756901334/uqzxs7gvktzigjufxbxx.jpg",
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756901334/wl2ti22qwhssdzaku1t7.jpg",
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756901334/xaxnaiozfi4utab2v6sh.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756989266/a8c847e1-28b2-4323-b4c4-8200334a53d5.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756989288/7f4ecda8-b025-41ce-8268-2f31b295a7af.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756989300/75958598-e4d9-4693-8650-cf2f774b2f7a.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756989313/193a1f7b-10c1-43f0-bb85-29de770a481f.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756989325/e6abe4b8-4df2-40bb-8a93-efbf1909a89d.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756989329/51479662-781a-4232-8f8f-37df7116c6fe.jpg",
       ],
       hero: {
-        title: "Viva a Experiência de um Resort Urbano no Florais Eco Resort",
+        title: "Lançamento Exclusivo: Terrenos no Tamboré Londrina",
         subtitle:
-          "Apartamento com 3 quartos, móveis planejados e a mais completa área de lazer de Londrina.",
+          "Construa a casa dos seus sonhos no novo padrão de viver bem. Lotes a partir de 411 m².",
       },
       details: {
-        sectionTitle: "Conforto e Sofisticação com Móveis Planejados",
+        sectionTitle: "Construa Seu Sonho na Melhor Localização",
         sectionDescription:
-          "Este incrível apartamento, totalmente equipado com móveis planejados de excelente qualidade, oferece o equilíbrio perfeito entre conforto e praticidade para o seu dia a dia.",
-        subtitle: "Cozinha funcional e sala ampla para seus melhores momentos.",
+          "O Tamboré Londrina oferece terrenos de alto padrão, ideais para você construir um projeto exclusivo em um ambiente seguro e privilegiado.",
+        subtitle: "Lotes amplos com infraestrutura completa e rede elétrica subterrânea.",
         paragraphs: [
-          "A cozinha funcional foi totalmente planejada para otimizar seu tempo, com armários modernos e design inteligente. A sala ampla é um ambiente espaçoso e aconchegante, ideal para receber amigos e familiares ou relaxar confortavelmente.",
-          "A área íntima conta com 3 dormitórios, sendo 1 suíte, bem distribuídos para garantir privacidade e bem-estar para toda a família. O imóvel ainda oferece a comodidade de 2 vagas de garagem.",
+          "Situado na Zona Sul, uma das regiões mais valorizadas de Londrina, o empreendimento está a menos de 10 minutos do Catuaí Shopping e próximo à charmosa Gleba Palhano, unindo conveniência e exclusividade.",
+          "Os lotes, que variam de 411 m² a 1.167 m², permitem a realização de projetos arquitetônicos únicos. O condomínio conta com infraestrutura de ponta, incluindo uma rede elétrica totalmente subterrânea e segurança 24 horas.",
         ],
-        descriptionTitle: "Diferenciais do Apartamento",
+        descriptionTitle: "Destaques do Loteamento",
         differentiators: [
-          "Completo em Móveis Planejados",
-          "Cozinha Funcional e Moderna",
-          "2 Vagas de Garagem",
-          "Andar Alto (17º andar)",
-          "Localização Premium na Gleba Palhano",
+          "Localização Estratégica na Zona Sul",
+          "Lotes Amplos (a partir de 411 m²)",
+          "Rede Elétrica Subterrânea",
+          "Segurança 24h com Controle de Acesso",
+          "Clube Exclusivo com 45.000 m²",
         ],
       },
       video: {
-        title: "Vídeo",
-        subtitle: "Conheça o seu novo estilo de vida.",
-        videoUrl: "https://www.youtube.com/watch?v=gAFyhlXjE4Y",
-        description: "Explore todos os ambientes.",
-        sectionDescription: "Assista ao vídeo e veja tudo que o imóvel e o condomínio oferecem.",
+        title: "Vídeo do Lançamento Tamboré Londrina",
+        subtitle: "Descubra o novo padrão de viver bem.",
+        videoUrl: "https://youtu.be/nL3WTfhUDwI",
+        description: "Assista ao vídeo e conheça a infraestrutura completa do empreendimento.",
+        sectionDescription: "Veja o vídeo e se encante com seu futuro endereço.",
       },
       investment: {
-        price: 850000,
-        priceFormatted: "R$ 850.000,00",
-        conditions: "Excelente investimento em um dos condomínios mais desejados de Londrina.",
+        price: 877639.77,
+        priceFormatted: "R$ 877.639,77",
+        conditions:
+          "Condições especiais de pré-lançamento. O valor varia com a metragem e localização.",
       },
       condominium: {
-        sectionTitle: "Florais Eco Resort: Mais de 40 Opções de Lazer",
+        sectionTitle: "Um Clube Exclusivo com 45.000 m²",
         sectionDescription:
-          "Prepare-se para um novo conceito de viver bem. O Florais é referência em lazer, esporte e qualidade de vida, com uma estrutura de clube incomparável em 8.400 m².",
+          "Uma área de lazer incomparável, que inclui lagos, para oferecer diversas opções de esporte e bem-estar para toda a família.",
         image:
-          "https://res.cloudinary.com/dhptebqcq/image/upload/v1756821876/c083bc24-91b1-44b0-acaf-6e109222e6b3.jpg",
-        descriptionTitle: "Infraestrutura Completa para Todas as Idades",
+          "https://res.cloudinary.com/dhptebqcq/image/upload/v1756989437/808ee33f-5b40-40a2-9b32-b3b8daf50eda.jpg",
+        descriptionTitle: "Lazer, Esporte e Contato com a Natureza",
         descriptionParagraphs: [
-          "Aqui você encontra desde uma academia de alto padrão, spa e piscinas, até espaços exclusivos na cidade, como Boliche e Autorama, além de conveniências como salão de beleza e home office.",
+          "O clube conta com lagos para pescaria, um complexo de piscinas, quadras de tênis, beach tennis e poliesportiva, academia, salão de festas, cinema ao ar livre e até áreas temáticas como praça de skate e espaço pet.",
         ],
         amenities: [
-          { icon: "shield-check", label: "Portaria 24h" },
-          { icon: "barbell", label: "Academia de Alto Padrão" },
+          { icon: "shield-check", label: "Segurança 24h" },
+          { icon: "fish", label: "Lagos para Pescaria" },
+          { icon: "water", label: "Piscinas" },
           { icon: "swatch-book", label: "Quadra de Tênis" },
-          { icon: "cake", label: "4 Salões de Festa" },
-          { icon: "briefcase", label: "2 Escritórios Home Office" },
-          { icon: "scissors", label: "Salão de Beleza" },
-          { icon: "coffee", label: "Salão de Chá" },
-          { icon: "water", label: "Piscinas Externas" },
-          { icon: "fire", label: "Piscina Aquecida com Raia" },
+          { icon: "sun", label: "Quadra de Beach Tennis" },
+          { icon: "dribbble", label: "Quadra Poliesportiva" },
+          { icon: "barbell", label: "Academia" },
+          { icon: "cake", label: "Salão de Festas" },
+          { icon: "utensils", label: "Espaço Gourmet" },
+          { icon: "film", label: "Cinema ao Ar Livre" },
+          { icon: "footsteps", label: "Pista de Caminhada" },
+          { icon: "leaf", label: "Trilhas Ecológicas" },
+          { icon: "skate", label: "Praça de Skate" },
+          { icon: "paw", label: "Espaço Pet" },
         ],
       },
       location: {
         sectionDescription:
-          "Localizado no coração da Gleba Palhano, o bairro mais valorizado e desejado de Londrina, próximo a shoppings, restaurantes e serviços.",
+          "Localizado na Zona Sul de Londrina, a região mais valorizada da cidade, a menos de 10 minutos do Catuaí Shopping e próximo à Gleba Palhano.",
         googleMapsUrl:
-          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3663.5199556955968!2d-51.1796225!3d-23.333169800000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb5cb4abebc3d9%3A0x7badf9e688bb1041!2sFlorais%20Eco%20Resort%20%26%20Residence!5e0!3m2!1spt-BR!2sbr!4v1756820995735!5m2!1spt-BR!2sbr",
-        address: "Rua Eurico Hummig, 255 - Gleba Palhano, Londrina - PR",
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14650.10820994023!2d-51.243066698592834!3d-23.369143136595923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb5dfb12f177f5%3A0x68e8edddb3ebeb2f!2sTambor%C3%A9%20Londrina!5e0!3m2!1spt-BR!2sbr!4v1756988293115!5m2!1spt-BR!2sbr",
+        address: "Condomínio Tamboré,  R. Alcides Turini, Londrina - PR,",
         nearbyPoints: [
-          { icon: "shopping-bag", label: "Shopping Aurora", distance: "Prox." },
-          { icon: "leaf", label: "Lago Igapó", distance: "Prox." },
-          { icon: "store", label: "Supermercados", distance: "Prox." },
-          { icon: "utensils", label: "Restaurantes", distance: "Prox." },
+          { icon: "shopping-bag", label: "Catuaí Shopping", distance: "< 10 min" },
+          { icon: "store", label: "Gleba Palhano", distance: "Prox." },
         ],
         advantages: [
-          "Endereço na Gleba Palhano",
-          "Bairro de altíssima valorização",
-          "Próximo aos principais pontos da Zona Sul",
-          "Infraestrutura completa no entorno",
+          "Localização na Zona Sul",
+          "Região de alta valorização",
+          "Fácil acesso a shoppings e serviços",
         ],
       },
-      bedrooms: 3,
-      bathrooms: 2,
-      garageSpots: 2,
-      suites: 1,
-      totalArea: 132.23,
-      builtArea: 75,
+      bedrooms: 0,
+      bathrooms: 0,
+      garageSpots: 0,
+      suites: 0,
+      totalArea: 412,
+      builtArea: 0,
       displayFeatures: [
         {
-          label: "Área Total",
-          value: "132,23m²",
-          iconId: "home",
-        },
-        {
-          label: "Área Útil",
-          value: "75m²",
+          label: "Área do Terreno",
+          value: "412m²",
           iconId: "maximize",
         },
-        {
-          label: "Quartos",
-          value: "3",
-          iconId: "users",
-        },
-        {
-          label: "Suítes",
-          value: "1",
-          iconId: "waves",
-        },
-        {
-          label: "Banheiros",
-          value: "2",
-          iconId: "bath",
-        },
-        {
-          label: "Vagas",
-          value: "2",
-          iconId: "car",
-        },
       ],
-      amenities: ["Completo em Móveis Planejados", "Cozinha Funcional"],
+      amenities: [
+        "Localização Estratégica na Zona Sul",
+        "Lotes Amplos (a partir de 411 m²)",
+        "Rede Elétrica Subterrânea",
+        "Segurança 24h com Controle de Acesso",
+        "Clube Exclusivo com 45.000 m²",
+      ],
     };
 
     try {
+      // Debug: Log dos dados antes de enviar
+      console.log("Dados que serão enviados:", JSON.stringify(propertyJsonData, null, 2));
+
       const response = await fetch("/api/properties", {
         method: "POST",
         headers: {
@@ -161,6 +148,7 @@ export default function CreatePropertyButton() {
       const result = await response.json();
 
       if (!response.ok) {
+        console.error("Erro da API:", result);
         throw new Error(result.message || "Ocorreu um erro na API.");
       }
 

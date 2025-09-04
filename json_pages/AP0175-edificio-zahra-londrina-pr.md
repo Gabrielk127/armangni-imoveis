@@ -1,5 +1,5 @@
     const propertyJsonData: PropertyData = {
-      slug: "AP0005-edificio-zahra-londrina-pr",
+      slug: "AP0175-edificio-zahra-londrina-pr",
       pageTitle: "Apartamento no Edifício Zahra | Nova Prochet, Londrina",
       whatsappMessage:
         "Olá! Tenho interesse no apartamento no Edifício Zahra, na Nova Prochet, que vi no site e gostaria de mais informações. https://armangniimoveis.com.br/imovel/AP0005-edificio-zahra-londrina-pr",
@@ -39,10 +39,10 @@
         ],
       },
       video: {
-        title: "Tour Virtual pelo Edifício Zahra",
+        title: "Vídeo",
         subtitle: "Descubra o lugar onde o essencial da sua vida floresce.",
         videoUrl: "http://www.youtube.com/watch?v=7yaBO-dkzfQ",
-        description: "Faça um tour virtual e explore todos os ambientes.",
+        description: "Explore todos os ambientes.",
         sectionDescription: "Assista ao vídeo e veja tudo que o imóvel oferece.",
       },
       investment: {

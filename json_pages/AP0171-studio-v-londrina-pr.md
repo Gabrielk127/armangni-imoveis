@@ -1,8 +1,8 @@
     const propertyJsonData: PropertyData = {
-      slug: "AP0007-studio-v-londrina-pr",
+      slug: "AP0171-studio-v-londrina-pr",
       pageTitle: "Apartamento no Edifício Studio V | Centro, Londrina",
       whatsappMessage:
-        "Olá! Tenho interesse no apartamento 704 no Edifício Studio V, na Rua Paranaguá, que vi no site e gostaria de mais informações. https://armangniimoveis.com.br/imovel/AP0007-studio-v-londrina-pr",
+        "Olá! Tenho interesse no apartamento 704 no Edifício Studio V, na Rua Paranaguá, que vi no site e gostaria de mais informações. https://armangniimoveis.com.br/imovel/AP0171-studio-v-londrina-pr",
       pageDescription:
         "Apartamento no centro de Londrina, Ed. Studio V. 64m² privativos, 2 quartos (1 suíte), cozinha planejada e 2 vagas paralelas. Lazer com piscinas e churrasqueira.",
       headerImage:
@@ -38,10 +38,10 @@
         ],
       },
       video: {
-        title: "Tour Virtual pelo Apartamento no Studio V",
+        title: "Vídeo",
         subtitle: "Conheça cada detalhe do seu novo lar no centro de Londrina.",
         videoUrl: "https://www.youtube.com/watch?v=bqbLmw4OouU",
-        description: "Faça um tour virtual e explore todos os ambientes.",
+        description: "Explore todos os ambientes.",
         sectionDescription: "Assista ao vídeo e veja tudo que o imóvel oferece.",
       },
       investment: {

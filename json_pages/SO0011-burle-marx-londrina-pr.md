@@ -1,8 +1,8 @@
     const propertyJsonData: PropertyData = {
-      slug: "CA0037-burle-marx-londrina-pr",
+      slug: "SO0011-burle-marx-londrina-pr",
       pageTitle: "Casa à Venda no Jardim Burle Marx | Londrina",
       whatsappMessage:
-        "Olá! Tenho interesse na casa na Rua Alcino Carneiro Ribas, no Jardim Burle Marx, que vi no site e gostaria de mais informações. https://armangniimoveis.com.br/imovel/CA0037-burle-marx-londrina-pr",
+        "Olá! Tenho interesse na casa na Rua Alcino Carneiro Ribas, no Jardim Burle Marx, que vi no site e gostaria de mais informações. https://armangniimoveis.com.br/imovel/SO0011-burle-marx-londrina-pr",
       pageDescription:
         "Casa de 360m² no Jardim Burle Marx, 3 suítes + escritório reversível, 5 banheiros e 4 vagas. Ampla área de lazer com piscina e churrasqueira, integrada à sala com pé direito duplo.",
       headerImage:
@@ -41,10 +41,10 @@
         ],
       },
       video: {
-        title: "Tour Virtual por esta Casa no Burle Marx",
+        title: "Vídeo",
         subtitle: "Conheça cada detalhe da sua futura casa.",
         videoUrl: "https://www.google.com/search?q=http.googleusercontent.com/youtube.com/5",
-        description: "Faça um tour virtual e explore todos os ambientes.",
+        description: "Explore todos os ambientes.",
         sectionDescription: "Assista ao vídeo e veja tudo que o imóvel oferece.",
       },
       investment: {

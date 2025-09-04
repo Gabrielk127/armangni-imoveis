@@ -1,5 +1,5 @@
     const propertyJsonData: PropertyData = {
-      slug: "SB0003-rosario-pitelli-cornelio-procopio-pr",
+      slug: "SO0010-rosario-pitelli-cornelio-procopio-pr",
       pageTitle: "Sobrado à Venda em Cornélio Procópio | Rosário Pitelli",
       whatsappMessage: `Olá! Tenho interesse no sobrado na Rua Josefina Oliveira David, em Cornélio Procópio, que vi no site e gostaria de mais informações. https://armangniimoveis.com.br/imovel/SB0003-rosario-pitelli-cornelio-procopio-pr`,
       pageDescription:
@@ -38,10 +38,10 @@
         ],
       },
       video: {
-        title: "Tour Virtual por este Sobrado Incrível",
+        title: "Vídeo",
         subtitle: "Conheça cada detalhe da sua futura casa.",
         videoUrl: "http://www.youtube.com/watch?v=oeiOE7bQjG8",
-        description: "Faça um tour virtual e explore todos os ambientes.",
+        description: "Explore todos os ambientes.",
         sectionDescription: "Assista ao vídeo e veja tudo que o imóvel oferece.",
       },
       investment: {

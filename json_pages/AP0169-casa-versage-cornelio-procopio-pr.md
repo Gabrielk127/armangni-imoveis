@@ -1,4 +1,4 @@
-# const propertyJsonData: PropertyData = {
+const propertyJsonData: PropertyData = {
 
 # slug: "AP0169-casa-versage-cornelio-procopio-pr",
 
@@ -230,4 +230,4 @@
 
 # amenities: ["Sacada com Churrasqueira", "Sala 02 Ambientes"],
 
-# };
+# }; -->

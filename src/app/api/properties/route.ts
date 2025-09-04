@@ -70,19 +70,21 @@ const PropertySchema = z.object({
       advantages: z.array(z.string()),
     })
     .optional(),
-  bedrooms: z.number().positive(),
-  bathrooms: z.number().positive(),
+  bedrooms: z.number().min(0),
+  bathrooms: z.number().min(0),
   garageSpots: z.number().min(0),
   suites: z.number().min(0),
   totalArea: z.number().min(0),
   builtArea: z.number().min(0),
-  displayFeatures: z.array(
-    z.object({
-      label: z.string(),
-      value: z.string(),
-      iconId: z.string(),
-    }),
-  ),
+  displayFeatures: z
+    .array(
+      z.object({
+        label: z.string(),
+        value: z.string(),
+        iconId: z.string(),
+      }),
+    )
+    .optional(),
   amenities: z.array(z.string()),
 });
 

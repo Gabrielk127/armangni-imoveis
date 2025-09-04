@@ -1,8 +1,8 @@
     const propertyJsonData: PropertyData = {
-      slug: "AP0008-florais-eco-resort-londrina-pr",
+      slug: "AP0176-florais-eco-resort-londrina-pr",
       pageTitle: "Apartamento no Florais Eco Resort | Gleba Palhano, Londrina",
       whatsappMessage:
-        "Olá! Tenho interesse no apartamento de 75m² no Florais Eco Resort, na Gleba Palhano, que vi no site e gostaria de mais informações.  https://armangniimoveis.com.br/imovel/AP0008-florais-eco-resort-londrina-pr",
+        "Olá! Tenho interesse no apartamento de 75m² no Florais Eco Resort, na Gleba Palhano, que vi no site e gostaria de mais informações.  https://armangniimoveis.com.br/imovel/AP0176-florais-eco-resort-londrina-pr",
       pageDescription:
         "Apartamento de 75m² na Gleba Palhano, condomínio Florais Eco Resort. 2 quartos (1 suíte), sacada com churrasqueira e lazer estilo resort com piscinas, boliche e mais.",
       headerImage:
@@ -38,10 +38,10 @@
         ],
       },
       video: {
-        title: "Tour Virtual pelo Florais Eco Resort",
+        title: "Vídeo pelo Florais Eco Resort",
         subtitle: "Conheça o seu novo estilo de vida.",
         videoUrl: "https://www.youtube.com/watch?v=HgLRLWwP6_w",
-        description: "Faça um tour virtual e explore todos os ambientes.",
+        description: "Explore todos os ambientes.",
         sectionDescription: "Assista ao vídeo e veja tudo que o imóvel e o condomínio oferecem.",
       },
       investment: {
