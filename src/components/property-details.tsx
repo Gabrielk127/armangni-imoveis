@@ -11,6 +11,7 @@ import {
   Ruler,
   Building,
   MapPin,
+  Waves,
 } from "lucide-react";
 import SectionTitle from "@/components/ui/section-title";
 
@@ -42,6 +43,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   ruler: Ruler,
   building: Building,
   mapPin: MapPin,
+  waves: Waves,
 };
 
 export default function PropertyDetails({
@@ -61,7 +63,7 @@ export default function PropertyDetails({
 
   if (displayFeatures && displayFeatures.length > 0) {
     features = displayFeatures.map((feature) => ({
-      icon: iconMap[feature.iconId] || Maximize,
+      icon: iconMap[feature.iconId] || Home,
       label: feature.label,
       value: feature.value,
     }));

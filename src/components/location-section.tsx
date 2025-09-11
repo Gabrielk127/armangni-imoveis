@@ -12,6 +12,10 @@ import {
   ShoppingBag,
   Bus,
   GraduationCap,
+  Landmark,
+  Plus,
+  Plane,
+  UtensilsCrossed,
 } from "lucide-react";
 import SectionTitle from "@/components/ui/section-title";
 import { PropertyData } from "@/types";
@@ -30,6 +34,12 @@ const iconMap = {
   leaf: Leaf,
   bus: Bus,
   university: GraduationCap,
+  // Novos ícones adicionados
+  landmark: Landmark,
+  plus: Plus,
+  plane: Plane,
+  utensils: UtensilsCrossed,
+  tree: Leaf, // Usando Leaf como alternativa para tree
 } as const;
 
 // Dados padrão caso não venham do Firebase

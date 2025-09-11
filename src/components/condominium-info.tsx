@@ -31,6 +31,18 @@ import {
   Package,
   Bike,
   Flame,
+  Fish,
+  Film,
+  Coffee,
+  PawPrint,
+  Plane,
+  Ship,
+  Zap,
+  Briefcase,
+  Blocks,
+  Plus,
+  Activity,
+  Palette,
 } from "lucide-react";
 import SectionTitle from "@/components/ui/section-title";
 import Image from "next/image";
@@ -66,6 +78,21 @@ const iconMap = {
   "swatch-book": SwatchBook,
   sun: Sun,
   dribbble: Dribbble,
+  // Novos ícones adicionados
+  fish: Fish,
+  film: Film,
+  coffee: Coffee,
+  paw: PawPrint,
+  plane: Plane,
+  ship: Ship,
+  futbol: Zap, // Usando Zap como alternativa para futebol
+  briefcase: Briefcase,
+  "toy-brick": Blocks, // Usando Blocks como alternativa para toy-brick
+  plus: Plus,
+  footsteps: Activity, // Usando Activity como alternativa para footsteps
+  palette: Palette,
+  spa: Waves, // Usando Waves como alternativa temporária para spa
+  skate: Activity, // Usando Activity como alternativa para skate
 } as const;
 
 // Dados padrão caso não venham do Firebase
