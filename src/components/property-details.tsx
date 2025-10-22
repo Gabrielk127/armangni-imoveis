@@ -12,6 +12,7 @@ import {
   Building,
   MapPin,
   Waves,
+  Shield,
 } from "lucide-react";
 import SectionTitle from "@/components/ui/section-title";
 
@@ -44,6 +45,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   building: Building,
   mapPin: MapPin,
   waves: Waves,
+  shield: Shield,
 };
 
 export default function PropertyDetails({

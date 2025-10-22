@@ -16,6 +16,7 @@ import {
   Plus,
   Plane,
   UtensilsCrossed,
+  Church,
 } from "lucide-react";
 import SectionTitle from "@/components/ui/section-title";
 import { PropertyData } from "@/types";
@@ -40,6 +41,7 @@ const iconMap = {
   plane: Plane,
   utensils: UtensilsCrossed,
   tree: Leaf, // Usando Leaf como alternativa para tree
+  church: Church,
 } as const;
 
 // Dados padrão caso não venham do Firebase
