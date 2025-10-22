@@ -5,6 +5,7 @@ import PhotoGallery from "@/components/photo-gallery";
 import LocationSection from "@/components/location-section";
 import PropertyValue from "@/components/property-value";
 import CondominiumInfo from "@/components/condominium-info";
+import VerticalVideoSection from "@/components/vertical-video-section";
 import FloatingWhatsAppButton from "@/components/floating-whatsapp-button";
 import ContactSection from "@/components/contact-form";
 import { PropertyData } from "@/types";
@@ -13,7 +14,7 @@ export default function PlaengePage() {
   const property: PropertyData = {
     slug: "plaenge-7239",
     whatsappMessage:
-      "Olá! Gostaria de mais informações sobre o Casa Horizonte - Plaenge no Centro de Londrina.",
+      "Olá! Gostaria de mais informações sobre o Casa'Horizonte - Plaenge no Centro de Londrina.",
     headerImage: "/plaenge/imagem_principal.jpeg",
     gallery: [
       "/plaenge/imagem1.jpeg",
@@ -24,15 +25,15 @@ export default function PlaengePage() {
       "/plaenge/imagem6.jpeg",
     ],
     hero: {
-      title: "Casa Horizonte - Breve lançamento Plaenge no Centro de Londrina",
+      title: "Casa'Horizonte - Breve lançamento Plaenge no Centro de Londrina",
       subtitle: "Apartamentos de alto padrão com 145m² e 181m² no coração de Londrina",
     },
     details: {
       subtitle: "Sofisticação e localização privilegiada",
       paragraphs: [
-        "O Casa Horizonte representa o novo marco da Plaenge no Centro de Londrina, oferecendo apartamentos de alto padrão com metragens de 145m² e 181m².",
+        "O Casa'Horizonte representa o novo marco da Plaenge no Centro de Londrina, oferecendo apartamentos de alto padrão com metragens de 145m² e 181m².",
         "Localizado estrategicamente na esquina entre a Rua Belo Horizonte e Pio XII, o empreendimento proporciona a combinação perfeita entre localização privilegiada e conforto premium.",
-        "Com acabamentos de primeira linha e design contemporâneo, o Casa Horizonte foi pensado para quem busca exclusividade e qualidade de vida em um dos endereços mais nobres da cidade.",
+        "Com acabamentos de primeira linha e design contemporâneo, o Casa'Horizonte foi pensado para quem busca exclusividade e qualidade de vida em um dos endereços mais nobres da cidade.",
       ],
     },
     bedrooms: 3,
@@ -139,7 +140,7 @@ export default function PlaengePage() {
       image: "/plaenge/imagem_principal.jpeg",
       descriptionTitle: "Lazer Completo",
       descriptionParagraphs: [
-        "O Casa Horizonte oferece uma infraestrutura completa de lazer e bem-estar, com piscina com raia, sauna úmida, sala de academia equipada e áreas de convivência.",
+        "O Casa'Horizonte oferece uma infraestrutura completa de lazer e bem-estar, com piscina com raia, sauna úmida, sala de academia equipada e áreas de convivência.",
         "Com guarita blindada e elevador privativo, o empreendimento garante segurança e privacidade máximas aos seus moradores.",
       ],
       amenities: [
@@ -169,11 +170,19 @@ export default function PlaengePage() {
         },
       ],
     },
+    video: {
+      title: "Conheça o Casa'Horizonte",
+      subtitle: "Veja o empreendimento em detalhes",
+      videoUrl: "https://www.youtube.com/embed/95TjP6IUnFQ",
+      description:
+        "Assista ao vídeo e descubra todos os diferenciais deste empreendimento exclusivo da Plaenge",
+      sectionDescription: "Tour virtual pelo Casa'Horizonte - Plaenge Centro de Londrina",
+    },
   };
 
   return (
     <main className="min-h-screen bg-gray-50">
-      <Header hasCondominium={!!property.condominium} hasVideo={false} />
+      <Header hasCondominium={!!property.condominium} hasVideo={!!property.video?.videoUrl} />
       <FloatingWhatsAppButton
         phoneNumber="5543991807520"
         whatsappMessage={property.whatsappMessage}
@@ -201,6 +210,15 @@ export default function PlaengePage() {
       <LocationSection locationData={property.location} />
       {property.investment && <PropertyValue investmentData={property.investment} />}
       {property.condominium && <CondominiumInfo condominiumData={property.condominium} />}
+      {property.video?.videoUrl && (
+        <VerticalVideoSection
+          title={property.video.title}
+          subtitle={property.video.subtitle}
+          videoUrl={property.video.videoUrl}
+          description={property.video.description}
+          sectionDescription={property.video.sectionDescription}
+        />
+      )}
       <ContactSection conversionIdentifier={property.slug} />
     </main>
   );
@@ -208,7 +226,7 @@ export default function PlaengePage() {
 
 export async function generateMetadata() {
   return {
-    title: "Casa Horizonte - Plaenge Centro Londrina | Armangni Imóveis",
+    title: "Casa'Horizonte - Plaenge Centro Londrina | Armangni Imóveis",
     description:
       "Breve lançamento Plaenge no Centro de Londrina. Apartamentos de 145m² e 181m², localizado na esquina da Rua Belo Horizonte com Pio XII.",
   };
