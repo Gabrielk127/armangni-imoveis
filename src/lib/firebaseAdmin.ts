@@ -40,9 +40,8 @@ function initializeFirebaseAdmin(): App {
       throw new Error("FIREBASE_PRIVATE_KEY não está definido nas variáveis de ambiente");
     }
 
-    // Processa a private key
-    const privateKey = process.env.FIREBASE_PRIVATE_KEY;
-    // console.log(
+    // Processa a private key (corrige as quebras de linha caso venham do .env)
+    const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, "\n") || "";
     //   "- Private Key processada:",
     //   privateKey.includes("-----BEGIN PRIVATE KEY-----") ? "✅ Válida" : "❌ Inválida",
     // );

@@ -23,7 +23,7 @@ export default function PropertyValue({ investmentData }: PropertyValueProps) {
       <div className="max-w-4xl mx-auto">
         <SectionTitle
           title="Investimento"
-          subtitle="Uma oportunidade única no mercado imobiliário de Ibiporã"
+          subtitle="Uma oportunidade única no mercado imobiliário"
         />
 
         <div className="text-center mb-8">
