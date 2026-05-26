@@ -16,146 +16,109 @@ export default function CreatePropertyButton() {
     setIsError(false);
 
     const propertyJsonData: PropertyData = {
-      slug: "AP0064-victoria-garden-ibipora-pr",
-      pageTitle: "Apartamento com 3 Quartos no Victoria Garden | Ibiporã",
+      slug: "BA0002-ponto-comercial-waldemar-spranger-londrina-pr",
+      pageTitle: "Ponto Comercial com Amplo Estacionamento na Avenida Waldemar Spranger | Londrina",
       whatsappMessage:
-        "Olá! Tenho interesse no apartamento (AP0064) no Condomínio Victoria Garden em Ibiporã que vi no site. https://armangniimoveis.com.br/imovel/AP0064-victoria-garden-ibipora-pr",
+        "Olá! Tenho interesse no ponto comercial de grande porte (BA0002) na Avenida Waldemar Spranger que vi no site.",
       pageDescription:
-        "Apartamento de 128m² no Cond. Victoria Garden, Ibiporã. Sol da manhã, 3 quartos (2 suítes), 3 banheiros e 2 vagas. Sacada com churrasqueira e lazer completo.",
+        "Ponto comercial com 2.018m² de área construída no Jardim Alcântara, região da Nova Prochet. Múltiplos pavimentos e subsolo com 34 vagas de garagem.",
       headerImage:
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210512/nm17a1njahgxcwenqmpr.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1779761073/kyg7hz7ll9pqp1wtniwq.jpg",
       gallery: [
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210510/pnnk2kjrbcb35vmrse9j.jpg",
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210511/tbidzzneklzdkknppm0w.jpg",
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210502/ldku41sxieclbhi3xi8n.jpg",
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210510/inqrmwbjtg47ttugwjx7.jpg",
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210512/nm17a1njahgxcwenqmpr.jpg",
-        "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210501/z3cviamdeqzwj6uguge8.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1779761074/lmeql5kputkdbe2kr9qb.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1779761076/pndmayn6m0fot3sm1weq.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1779761079/xoqsmg2orjwr2mhyewdm.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1779761084/dq2vepqx9yawwyakuast.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1779761085/xhxku7izjvslax9roao0.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1779761085/vhkshhhc1j2fx1rxqysd.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1779761085/tmw4ow4qx5y5yg3mipga.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1779761086/es5qoganxppsg1hmmhkt.jpg",
+        "https://res.cloudinary.com/dhptebqcq/image/upload/v1779761085/bgk8ns9gb01ijfkekosl.jpg",
       ],
       hero: {
-        title: "Apartamento com Vista no Condomínio Victoria Garden",
+        title: "Ponto Comercial Estratégico na Região da Nova Prochet",
         subtitle:
-          "128m² de área privativa, sol da manhã, 3 quartos (2 suítes) no condomínio mais completo de Ibiporã.",
+          "Infraestrutura grandiosa com mais de 2.000m² de área construída e subsolo para 34 veículos na Av. Waldemar Spranger.",
       },
       details: {
-        sectionTitle: "Conforto e Praticidade para o Bem Viver",
+        sectionTitle: "Espaço Amplo, Versatilidade e Visibilidade Coorporativa",
         sectionDescription:
-          "Um projeto moderno e elegante, com infraestrutura completa para ar condicionado e aquecimento a gás, pensado para quem privilegia o conforto.",
+          "Um imóvel comercial de grande porte com distribuição inteligente em múltiplos pavimentos, perfeitamente adaptável para grandes operações, franquias ou sedes administrativas.",
         subtitle:
-          "Imóvel com sacada com churrasqueira e infraestrutura para split nos quartos e sala.",
+          "Estrutura completa com amplo showroom e subsolo que soluciona a demanda por estacionamento.",
         paragraphs: [
-          "Este apartamento com sol da manhã conta com 3 quartos, sendo 2 suítes, e um banheiro social. A planta inteligente inclui entradas social e de serviço distintas, e uma laje técnica para acomodar as máquinas de ar condicionado.",
-          "O acabamento de qualidade é evidente em detalhes como o forro de gesso em todos os ambientes, portas com borrachas amortecedoras e bancadas em granito. O imóvel já possui infraestrutura para aquecedor a gás e pontos para ar condicionado split nos 3 dormitórios e no living.",
+          "Este imponente ponto comercial destaca-se por seus 2.018,20 m² de área construída, distribuídos de maneira estratégica para maximizar o fluxo e a operação do seu negócio. O pavimento térreo conta com 609,29 m² de vão livre, ideal para recepção, vitrine e atendimento direto ao público.",
+          "O pavimento superior oferece 578,45 m² perfeitamente acopláveis para áreas administrativas, salas de reunião ou expansão de showroom. Para sanar em definitivo a busca por vagas na região, o amplo subsolo com 784,38 m² garante estacionamento coberto e seguro para até 34 veículos.",
         ],
-        descriptionTitle: "Destaques do Imóvel",
+        descriptionTitle: "Destaques da Estrutura",
         differentiators: [
-          "Sol da Manhã",
-          "Sacada com Churrasqueira",
-          "3 Quartos (2 Suítes)",
-          "Infraestrutura para Ar Condicionado e Gás",
-          "Laje Técnica para Ar Condicionado",
-          "Medidores Individualizados",
+          "2.018,20 m² de Área Construída",
+          "Subsolo com 34 Vagas de Garagem",
+          "Pavimento Térreo com 609,29 m² para Showroom",
+          "Pavimento Superior com 578,45 m² para Escritórios",
+          "Localização Premium na Av. Waldemar Spranger",
+          "Isenção de Taxa de Condomínio",
         ],
-      },
-      video: {
-        title: "Vídeo do Apartamento no Victoria Garden",
-        subtitle: "Conheça cada detalhe do seu novo lar.",
-        videoUrl: "https://youtu.be/2bQD-qptGzE",
-        description:
-          "Assista ao vídeo para uma visualização completa do apartamento e da completa área de lazer do condomínio.",
-        sectionDescription: "Dê o play e apaixone-se pelo seu futuro lar.",
       },
       investment: {
-        price: 850000,
-        priceFormatted: "R$ 850.000",
-        conditions: "Consulte as condições de pagamento.",
-      },
-      condominium: {
-        sectionTitle: "Condomínio Victoria Garden: Lazer Completo",
-        sectionDescription:
-          "Uma torre única com térreo dedicado a uma área de lazer completa, oferecendo diversas opções de entretenimento e bem-estar.",
-        image:
-          "https://res.cloudinary.com/dhptebqcq/image/upload/v1756210501/u7qt9l69pliewhubcvvl.jpg",
-        descriptionTitle: "Lazer e Conveniência",
-        descriptionParagraphs: [
-          "O condomínio oferece Salão de Festas Gourmet, Churrasqueira Gourmet, Brinquedoteca, Sala de Jogos, Academia, Playground, Piscinas Aquecidas e Quadra.",
-        ],
-        amenities: [
-          { icon: "cake", label: "Salão de Festas Gourmet" },
-          { icon: "utensils", label: "Churrasqueira Gourmet" },
-          { icon: "toy-brick", label: "Brinquedoteca" },
-          { icon: "gamepad", label: "Sala de Jogos" },
-          { icon: "barbell", label: "Academia (Fitness)" },
-          { icon: "rocket", label: "Playground" },
-          { icon: "fire", label: "Piscinas Aquecidas" },
-          { icon: "dribbble", label: "Quadra" },
-        ],
+        price: 70000,
+        priceFormatted: "R$ 70.000,00 / mês",
+        conditions: "Locação comercial de grande porte. Condomínio isento.",
       },
       location: {
         sectionDescription:
-          "Localizado em um dos pontos mais nobres da Avenida dos Estudantes, no centro de Ibiporã, próximo a comércios e serviços.",
+          "Localizado na Avenida Waldemar Spranger, no Jardim Alcântara, uma das vias mais dinâmicas e estratégicas de Londrina, ideal para forte apelo comercial.",
         googleMapsUrl:
-          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3665.340249015131!2d-51.05518562490034!3d-23.26708337900314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb472713745211%3A0x554ccc53cdb66a9!2sAv.%20dos%20Estudantes%2C%20594%20-%20Centro%2C%20Ibipor%C3%A3%20-%20PR%2C%2086200-000!5e0!3m2!1spt-BR!2sbr!4v1757598255736!5m2!1spt-BR!2sbr",
-        address: "Avenida dos Estudantes, 594, 504 - Centro, Ibiporã - PR, 86200-000",
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3820.566481871085!2d-51.170605924406416!3d-23.34604085371752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb43256e37d48d%3A0x429032db0c4de227!2sAv.%20Waldemar%20Spranger%2C%201421%20-%20Alcantara%2C%20Londrina%20-%20PR%2C%2086047-390!5e1!3m2!1spt-BR!2sbr!4v1779761203326!5m2!1spt-BR!2sbr",
+        address: "Av. Waldemar Spranger, 1421 - Jardim Alcântara, Londrina - PR",
         nearbyPoints: [
-          { icon: "tree", label: "Praça Pio XII", distance: "2 min" },
-          { icon: "shopping-cart", label: "Supermercados", distance: "3 min" },
-          { icon: "landmark", label: "Bancos", distance: "3 min" },
-          { icon: "building", label: "Prefeitura de Ibiporã", distance: "4 min" },
+          { icon: "map-marker-alt", label: "Região da Nova Prochet", distance: "Imediato" },
+          { icon: "road", label: "Principais Vias de Acesso", distance: "Fácil" },
+          { icon: "store", label: "Centros Comerciais", distance: "Prox." },
         ],
         advantages: [
-          "Localização Central Nobre",
-          "Fácil acesso a pé ao comércio",
-          "Próximo a serviços essenciais",
+          "Excelente Vitrine Comercial",
+          "Grande Fluxo de Veículos",
+          "Região Altamente Valorizada",
+          "Fácil Acessibilidade",
         ],
       },
-      bedrooms: 3,
-      bathrooms: 3,
-      garageSpots: 2,
-      suites: 2,
-      totalArea: 199,
-      builtArea: 128,
+      bedrooms: 0,
+      bathrooms: 0,
+      garageSpots: 34,
+      suites: 0,
+      totalArea: 0,
+      builtArea: 2018.2,
       displayFeatures: [
         {
-          label: "Área Total",
-          value: "199m²",
-          iconId: "home",
-        },
-        {
-          label: "Área Privativa",
-          value: "128m²",
+          label: "Área Construída",
+          value: "2.018,20m²",
           iconId: "maximize",
         },
         {
-          label: "Quartos",
-          value: "3",
-          iconId: "users",
+          label: "Térreo / Salão",
+          value: "609,29m²",
+          iconId: "home",
         },
         {
-          label: "Suítes",
-          value: "2",
-          iconId: "waves",
+          label: "Superior / Salas",
+          value: "578,45m²",
+          iconId: "building",
         },
         {
-          label: "Banheiros",
-          value: "3",
-          iconId: "bath",
-        },
-        {
-          label: "Vagas",
-          value: "2",
+          label: "Vagas Subsolo",
+          value: "34 vagas",
           iconId: "car",
         },
       ],
       amenities: [
-        "Sacada com Churrasqueira",
-        "Infra p/ Ar Condicionado",
-        "Infra p/ Aquecedor a Gás",
-        "Forro de Gesso",
-        "Laje Técnica",
+        "Subsolo com Garagem",
+        "Salão de Vão Livre",
+        "Pavimento Administrativo",
+        "Estrutura de Apoio Técnica",
+        "Vitrine para Avenida",
       ],
     };
-
     try {
       // Debug: Log dos dados antes de enviar
       console.log("Dados que serão enviados:", JSON.stringify(propertyJsonData, null, 2));

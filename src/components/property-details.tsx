@@ -134,12 +134,18 @@ export default function PropertyDetails({
         {/* Features Grid - Só mostra se há features */}
         {features.length > 0 && (
           <div
-            className={`grid gap-6 mb-12 ${
+            className={`grid gap-6 mb-12 justify-center ${
               features.length === 1
                 ? "grid-cols-1 max-w-md mx-auto"
-                : features.length <= 3
-                  ? "grid-cols-1 md:grid-cols-3"
-                  : "grid-cols-2 md:grid-cols-3 lg:grid-cols-6"
+                : features.length === 2
+                  ? "grid-cols-2 max-w-2xl mx-auto"
+                  : features.length === 3
+                    ? "grid-cols-1 md:grid-cols-3 max-w-3xl mx-auto"
+                    : features.length === 4
+                      ? "grid-cols-2 md:grid-cols-4 max-w-4xl mx-auto"
+                      : features.length === 5
+                        ? "grid-cols-2 md:grid-cols-5 max-w-5xl mx-auto"
+                        : "grid-cols-2 md:grid-cols-3 lg:grid-cols-6"
             }`}
           >
             {features.map((feature, index) => (
