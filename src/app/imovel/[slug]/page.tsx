@@ -9,6 +9,7 @@ import PropertyValue from "@/components/property-value";
 import CondominiumInfo from "@/components/condominium-info";
 import VideoSection from "@/components/video-section";
 import FloatingWhatsAppButton from "@/components/floating-whatsapp-button";
+import { PHONE_NUMBER } from "@/lib/constants";
 import ContactSection from "@/components/contact-form";
 
 interface PageProps {
@@ -35,7 +36,7 @@ export default async function PropertyPage({ params }: PageProps) {
       <main className="min-h-screen bg-gray-50">
         <Header hasCondominium={!!property.condominium} hasVideo={!!property.video?.videoUrl} />
         <FloatingWhatsAppButton
-          phoneNumber="5543991807520"
+          phoneNumber={PHONE_NUMBER}
           whatsappMessage={property.whatsappMessage}
         />
         <HeroSection

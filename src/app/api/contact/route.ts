@@ -1,4 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
   try {
@@ -29,56 +32,70 @@ export async function POST(request: NextRequest) {
       phone: phoneNumbers,
     };
 
-    const rdStationData = {
-      event_type: "CONVERSION",
-      event_family: "CDP",
-      payload: {
-        conversion_identifier: conversionIdentifier,
-        name: sanitizedData.name,
-        email: sanitizedData.email,
-        mobile_phone: sanitizedData.phone,
-        cf_mensagem: message || "", // Campo personalizado para a mensagem
-      },
-    };
+    // Send email via Resend
+    const { error } = await resend.emails.send({
+      from: "Armangni Imóveis <onboarding@resend.dev>",
+      to: "contato.armangni@gmail.com",
+      subject: `Novo Lead: ${sanitizedData.name} — ${conversionIdentifier}`,
+      html: `
+        <h2>Novo lead do site</h2>
+        <p><strong>Imóvel:</strong> <a href="https://armangniimoveis.com.br/imovel/${conversionIdentifier}">${conversionIdentifier}</a></p>
+        <p><strong>Nome:</strong> ${sanitizedData.name}</p>
+        <p><strong>E-mail:</strong> ${sanitizedData.email}</p>
+        <p><strong>Telefone:</strong> ${sanitizedData.phone}</p>
+        <p><strong>Mensagem:</strong> ${message || "—"}</p>
+      `,
+    });
 
-    // Make request to RD Station API
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 10000);
-
-    const response = await fetch(
-      `https://api.rd.services/platform/conversions?api_key=${process.env.RD_STATION_TOKEN}`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(rdStationData),
-        signal: controller.signal,
-      },
-    );
-
-    clearTimeout(timeoutId);
-
-    if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      console.error("RD Station API Error:", errorData);
-
+    if (error) {
+      console.error("Resend error:", JSON.stringify(error, null, 2));
       return NextResponse.json(
         { error: "Erro ao processar solicitação. Tente novamente." },
         { status: 500 },
       );
     }
 
+    // --- RD Station (desativado temporariamente) ---
+    // const rdStationData = {
+    //   event_type: "CONVERSION",
+    //   event_family: "CDP",
+    //   payload: {
+    //     conversion_identifier: conversionIdentifier,
+    //     name: sanitizedData.name,
+    //     email: sanitizedData.email,
+    //     mobile_phone: sanitizedData.phone,
+    //     cf_mensagem: message || "",
+    //   },
+    // };
+    //
+    // const controller = new AbortController();
+    // const timeoutId = setTimeout(() => controller.abort(), 10000);
+    //
+    // const response = await fetch(
+    //   `https://api.rd.services/platform/conversions?api_key=${process.env.RD_STATION_TOKEN}`,
+    //   {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify(rdStationData),
+    //     signal: controller.signal,
+    //   },
+    // );
+    //
+    // clearTimeout(timeoutId);
+    //
+    // if (!response.ok) {
+    //   const errorData = await response.json().catch(() => ({}));
+    //   console.error("RD Station API Error:", errorData);
+    //   return NextResponse.json(
+    //     { error: "Erro ao processar solicitação. Tente novamente." },
+    //     { status: 500 },
+    //   );
+    // }
+    // --- fim RD Station ---
+
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("Contact form error:", error);
-
-    if (error instanceof Error && error.name === "AbortError") {
-      return NextResponse.json(
-        { error: "Tempo limite excedido. Tente novamente." },
-        { status: 408 },
-      );
-    }
 
     return NextResponse.json(
       { error: "Erro interno do servidor. Tente novamente mais tarde." },

@@ -3,6 +3,7 @@
 import type React from "react";
 import { motion } from "framer-motion";
 import { Phone, Mail, MessageCircle } from "lucide-react";
+import { PHONE_NUMBER_FORMATTED } from "@/lib/constants";
 import SectionTitle from "@/components/ui/section-title";
 import Form from "@/components/form"; // 👈 Importa o novo componente de formulário
 
@@ -47,7 +48,7 @@ export default function ContactSection({ conversionIdentifier }: ContactSectionP
                 <Phone className="w-6 h-6 text-[#BFB4AA]" />
                 <div>
                   <p className="font-semibold">Telefone</p>
-                  <p className="text-[#c9ccd0]">(43) 99180-7520</p>
+                  <p className="text-[#c9ccd0]">{PHONE_NUMBER_FORMATTED}</p>
                 </div>
               </div>
 
@@ -63,7 +64,7 @@ export default function ContactSection({ conversionIdentifier }: ContactSectionP
                 <MessageCircle className="w-6 h-6 text-[#BFB4AA]" />
                 <div>
                   <p className="font-semibold">WhatsApp</p>
-                  <p className="text-[#c9ccd0]">(43) 99180-7520</p>
+                  <p className="text-[#c9ccd0]">{PHONE_NUMBER_FORMATTED}</p>
                 </div>
               </div>
             </div>

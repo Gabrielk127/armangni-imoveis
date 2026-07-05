@@ -1,0 +1,2 @@
+export const PHONE_NUMBER = "5543991708520";
+export const PHONE_NUMBER_FORMATTED = "(43) 99170-8520";
