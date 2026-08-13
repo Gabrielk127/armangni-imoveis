@@ -1,16 +1,6 @@
 import { notFound } from "next/navigation";
 import { getPropertyBySlug } from "@/services/propertyService";
-import Header from "@/components/header/header";
-import HeroSection from "@/components/hero-section";
-import PropertyDetails from "@/components/property-details";
-import PhotoGallery from "@/components/photo-gallery";
-import LocationSection from "@/components/location-section";
-import PropertyValue from "@/components/property-value";
-import CondominiumInfo from "@/components/condominium-info";
-import VideoSection from "@/components/video-section";
-import FloatingWhatsAppButton from "@/components/floating-whatsapp-button";
-import { PHONE_NUMBER } from "@/lib/constants";
-import ContactSection from "@/components/contact-form";
+import PropertyView from "@/components/property-view";
 
 interface PageProps {
   params: Promise<{
@@ -28,52 +18,7 @@ export default async function PropertyPage({ params }: PageProps) {
       notFound();
     }
 
-    if (!property) {
-      notFound();
-    }
-
-    return (
-      <main className="min-h-screen bg-gray-50">
-        <Header hasCondominium={!!property.condominium} hasVideo={!!property.video?.videoUrl} />
-        <FloatingWhatsAppButton
-          phoneNumber={PHONE_NUMBER}
-          whatsappMessage={property.whatsappMessage}
-        />
-        <HeroSection
-          title={property.hero?.title}
-          subtitle={property.hero?.subtitle}
-          headerImage={property.headerImage}
-        />
-
-        <PropertyDetails
-          subtitle={property.details?.subtitle}
-          paragraphs={property.details?.paragraphs}
-          bedrooms={property.bedrooms}
-          bathrooms={property.bathrooms}
-          garageSpots={property.garageSpots}
-          suites={property.suites}
-          totalArea={property.totalArea}
-          builtArea={property.builtArea}
-          displayFeatures={property.displayFeatures}
-          amenities={property.amenities}
-        />
-
-        <PhotoGallery gallery={property.gallery} />
-        <LocationSection locationData={property.location} />
-        <PropertyValue investmentData={property.investment} />
-        {property.condominium && <CondominiumInfo condominiumData={property.condominium} />}
-        {property.video?.videoUrl && (
-          <VideoSection
-            title={property.video.title}
-            subtitle={property.video.subtitle}
-            videoUrl={property.video.videoUrl}
-            description={property.video.description}
-            sectionDescription={property.video.sectionDescription}
-          />
-        )}
-        <ContactSection conversionIdentifier={property.slug} />
-      </main>
-    );
+    return <PropertyView property={property} />;
   } catch (error) {
     console.error("Erro ao buscar imóvel:", error);
     notFound();

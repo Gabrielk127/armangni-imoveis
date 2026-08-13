@@ -12,9 +12,10 @@ import { useToast } from "@/hooks/use-toast";
 // O formulário agora aceita um 'conversionIdentifier' para o RD Station
 interface FormProps {
   conversionIdentifier: string;
+  onSuccess?: () => void;
 }
 
-export default function Form({ conversionIdentifier }: FormProps) {
+export default function Form({ conversionIdentifier, onSuccess }: FormProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -56,6 +57,9 @@ export default function Form({ conversionIdentifier }: FormProps) {
           description: "Entraremos em contato em breve. Obrigado!",
         });
         setFormData({ name: "", email: "", phone: "", message: "" });
+        if (onSuccess) {
+          onSuccess();
+        }
       } else {
         const errorData = await response.json();
         throw new Error(errorData.error || "Falha ao enviar os dados.");

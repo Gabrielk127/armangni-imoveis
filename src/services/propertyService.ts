@@ -45,12 +45,16 @@ export async function getProperties(): Promise<Property[]> {
       return [];
     }
 
-    // Mapeia os documentos para o tipo Property
+    // Mapeia os documentos para o tipo Property (convertendo para objeto simples para o RSC)
     const properties: Property[] = querySnapshot.docs.map(
-      (doc: QueryDocumentSnapshot<DocumentData>) => ({
-        id: doc.id, // O ID agora é o slug
-        ...(doc.data() as PropertyData),
-      }),
+      (doc: QueryDocumentSnapshot<DocumentData>) => {
+        const data = doc.data() as PropertyData;
+        const cleanData = JSON.parse(JSON.stringify(data));
+        return {
+          id: doc.id, // O ID agora é o slug
+          ...cleanData,
+        };
+      },
     );
 
     return properties;
@@ -75,9 +79,12 @@ export async function getPropertyBySlug(slug: string): Promise<Property | null> 
       return null;
     }
 
+    const data = docSnapshot.data() as PropertyData;
+    const cleanData = JSON.parse(JSON.stringify(data));
+
     return {
       id: docSnapshot.id,
-      ...(docSnapshot.data() as PropertyData),
+      ...cleanData,
     };
   } catch (error) {
     console.error("Erro ao buscar imóvel por slug:", error);
