@@ -44,14 +44,14 @@ export default function PropertyView({ property, useVerticalVideo = false }: Pro
               <div className="text-center mb-8">
                 <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-[#BFB4AA]/20 text-[#BFB4AA] border border-[#BFB4AA]/30 mb-4">
                   <Lock className="w-3.5 h-3.5" />
-                  Acesso Restrito ao Imóvel
+                  VEJA O IMÓVEL POR DENTRO
                 </span>
                 <h1 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-3">
                   {property.hero?.title || "Imóvel Exclusivo"}
                 </h1>
                 <p className="text-sm md:text-base text-gray-300 max-w-lg mx-auto">
-                  Para visualizar todos os detalhes, fotos em alta resolução, valores e localização,
-                  por favor preencha seus dados abaixo.
+                  Para visualizar todos os detalhes, fotos, vídeo, valores e localização, por favor
+                  preencha seus dados abaixo.
                 </p>
               </div>
 
