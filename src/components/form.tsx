@@ -5,7 +5,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea"; // Adicionado Textarea
+import { Textarea } from "@/components/ui/textarea";
 import CTAButton from "@/components/ui/cta-button";
 import { useToast } from "@/hooks/use-toast";
 
