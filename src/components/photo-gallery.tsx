@@ -22,9 +22,13 @@ const defaultPhotos = [
 
 export default function PhotoGallery({ gallery }: PhotoGalleryProps) {
   // Converte as URLs do Firebase em objetos de foto ou usa as fotos padrão
+  const validGallery = Array.isArray(gallery)
+    ? gallery.filter((url): url is string => typeof url === "string" && url.trim().length > 0)
+    : [];
+
   const photos =
-    gallery && gallery.length > 0
-      ? gallery.map((url, index) => ({
+    validGallery.length > 0
+      ? validGallery.map((url, index) => ({
           id: index + 1,
           src: url,
           alt: `Imagem ${index + 1} da propriedade`,
@@ -36,6 +40,7 @@ export default function PhotoGallery({ gallery }: PhotoGalleryProps) {
   const [carouselIndex, setCarouselIndex] = useState(0);
 
   const openModal = (index: number) => {
+    if (!photos[index]) return;
     setCurrentIndex(index);
     setSelectedPhoto(photos[index].id);
   };
@@ -45,22 +50,26 @@ export default function PhotoGallery({ gallery }: PhotoGalleryProps) {
   };
 
   const nextPhoto = () => {
+    if (photos.length === 0) return;
     const newIndex = (currentIndex + 1) % photos.length;
     setCurrentIndex(newIndex);
     setSelectedPhoto(photos[newIndex].id);
   };
 
   const prevPhoto = () => {
+    if (photos.length === 0) return;
     const newIndex = (currentIndex - 1 + photos.length) % photos.length;
     setCurrentIndex(newIndex);
     setSelectedPhoto(photos[newIndex].id);
   };
 
   const nextCarousel = () => {
+    if (photos.length === 0) return;
     setCarouselIndex((prev) => (prev + 1) % photos.length);
   };
 
   const prevCarousel = () => {
+    if (photos.length === 0) return;
     setCarouselIndex((prev) => (prev - 1 + photos.length) % photos.length);
   };
 

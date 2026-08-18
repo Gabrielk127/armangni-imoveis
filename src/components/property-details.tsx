@@ -61,13 +61,17 @@ export default function PropertyDetails({
   amenities,
 }: PropertyDetailsProps) {
   // Se há displayFeatures, usar eles; caso contrário, usar a lógica padrão
-  let features = [];
+  let features: {
+    icon: React.ComponentType<{ className?: string }>;
+    label: string;
+    value: string;
+  }[] = [];
 
-  if (displayFeatures && displayFeatures.length > 0) {
-    features = displayFeatures.map((feature) => ({
-      icon: iconMap[feature.iconId] || Home,
-      label: feature.label,
-      value: feature.value,
+  if (displayFeatures && Array.isArray(displayFeatures) && displayFeatures.length > 0) {
+    features = displayFeatures.filter(Boolean).map((feature) => ({
+      icon: (feature?.iconId && iconMap[feature.iconId]) || Home,
+      label: feature?.label || "",
+      value: feature?.value || "",
     }));
   } else {
     // Lógica padrão - só mostrar features que têm valores válidos
@@ -76,33 +80,38 @@ export default function PropertyDetails({
         icon: Home,
         label: "Área Total",
         value: `${totalArea || 0}m²`,
-        show: totalArea && totalArea > 0,
+        show: !!(totalArea && totalArea > 0),
       },
       {
         icon: Maximize,
         label: "Área Construída",
         value: `${builtArea || 0}m²`,
-        show: builtArea && builtArea > 0,
+        show: !!(builtArea && builtArea > 0),
       },
       {
         icon: Users,
         label: "Quartos",
         value: `${bedrooms || 0} quartos`,
-        show: bedrooms && bedrooms > 0,
+        show: !!(bedrooms && bedrooms > 0),
       },
       {
         icon: ShowerHead,
         label: "Banheiros",
         value: `${bathrooms || 0} banheiros`,
-        show: bathrooms && bathrooms > 0,
+        show: !!(bathrooms && bathrooms > 0),
       },
       {
         icon: Car,
         label: "Garagem",
         value: `${garageSpots || 0} vagas`,
-        show: garageSpots && garageSpots > 0,
+        show: !!(garageSpots && garageSpots > 0),
       },
-      { icon: Bath, label: "Suítes", value: `${suites || 0} suítes`, show: suites && suites > 0 },
+      {
+        icon: Bath,
+        label: "Suítes",
+        value: `${suites || 0} suítes`,
+        show: !!(suites && suites > 0),
+      },
     ];
 
     features = defaultFeatures.filter((feature) => feature.show);
@@ -114,10 +123,21 @@ export default function PropertyDetails({
       ? "Terreno ideal para construir o projeto dos seus sonhos"
       : "Uma propriedade projetada para oferecer máximo conforto e sofisticação";
 
-  const detailsData = {
-    subtitle: subtitle || defaultSubtitle,
-    paragraphs: paragraphs || [],
-  };
+  const safeParagraphs = Array.isArray(paragraphs)
+    ? paragraphs.filter((p): p is string => typeof p === "string" && p.trim().length > 0)
+    : typeof paragraphs === "string" && (paragraphs as string).trim().length > 0
+      ? [paragraphs as string]
+      : [];
+
+  const safeAmenities = Array.isArray(amenities)
+    ? amenities
+        .map((a: unknown) => (typeof a === "string" ? a : (a as { label?: string })?.label || ""))
+        .filter((a) => typeof a === "string" && a.trim().length > 0)
+    : [];
+
+  const hasDescription =
+    safeParagraphs.length > 0 || (typeof subtitle === "string" && subtitle.trim().length > 0);
+  const hasAmenities = safeAmenities.length > 0;
 
   return (
     <section id="imovel" className="py-16 px-4 bg-[#1C1C1C]">
@@ -128,7 +148,7 @@ export default function PropertyDetails({
               ? "Informações do Terreno"
               : "Detalhes do Imóvel"
           }
-          subtitle={detailsData.subtitle}
+          subtitle={subtitle || defaultSubtitle}
         />
 
         {/* Features Grid - Só mostra se há features */}
@@ -166,13 +186,10 @@ export default function PropertyDetails({
         )}
 
         {/* Description and Amenities - Só mostra se há conteúdo */}
-        {(subtitle ||
-          (paragraphs && paragraphs.length > 0 && paragraphs.some((p) => p.trim())) ||
-          (amenities && amenities.length > 0 && amenities.some((a) => a.trim()))) && (
+        {(hasDescription || hasAmenities) && (
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Descrição - Só mostra se há subtitle ou paragraphs com conteúdo */}
-            {(subtitle ||
-              (paragraphs && paragraphs.length > 0 && paragraphs.some((p) => p.trim()))) && (
+            {/* Descrição */}
+            {hasDescription && (
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -184,18 +201,16 @@ export default function PropertyDetails({
                     ? "Sobre o Terreno"
                     : "Sobre o Imóvel"}
                 </h3>
-                {detailsData.paragraphs
-                  .filter((paragraph) => paragraph.trim())
-                  .map((paragraph: string, index: number) => (
-                    <p key={index} className="text-white leading-relaxed mb-4">
-                      {paragraph}
-                    </p>
-                  ))}
+                {safeParagraphs.map((paragraph: string, index: number) => (
+                  <p key={index} className="text-white leading-relaxed mb-4">
+                    {paragraph}
+                  </p>
+                ))}
               </motion.div>
             )}
 
-            {/* Amenities - Só mostra se há amenities com conteúdo */}
-            {amenities && amenities.length > 0 && amenities.some((a) => a.trim()) && (
+            {/* Amenities */}
+            {hasAmenities && (
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -204,21 +219,19 @@ export default function PropertyDetails({
               >
                 <h3 className="text-2xl font-bold text-[#BFB4AA] mb-4">Diferenciais</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {amenities
-                    .filter((amenity) => amenity.trim())
-                    .map((amenity: string, index: number) => (
-                      <motion.div
-                        key={`${amenity}-${index}`}
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.3, delay: index * 0.1 }}
-                        viewport={{ once: true }}
-                        className="flex items-center space-x-2 text-white"
-                      >
-                        <div className="w-2 h-2 bg-emerald-600 rounded-full" />
-                        <span className="text-sm">{amenity}</span>
-                      </motion.div>
-                    ))}
+                  {safeAmenities.map((amenity: string, index: number) => (
+                    <motion.div
+                      key={`${amenity}-${index}`}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.3, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="flex items-center space-x-2 text-white"
+                    >
+                      <div className="w-2 h-2 bg-emerald-600 rounded-full" />
+                      <span className="text-sm">{amenity}</span>
+                    </motion.div>
+                  ))}
                 </div>
               </motion.div>
             )}

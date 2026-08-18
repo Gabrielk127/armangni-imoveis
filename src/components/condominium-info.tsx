@@ -112,19 +112,34 @@ export default function CondominiumInfo({ condominiumData }: CondominiumInfoProp
     condominiumData?.sectionDescription || "Infraestrutura completa para seu conforto e bem-estar";
   const image = condominiumData?.image || "/house2.png";
   const descriptionTitle = condominiumData?.descriptionTitle || "Sobre o Condomínio";
-  const descriptionParagraphs = condominiumData?.descriptionParagraphs || [
-    "Descrição padrão do condomínio, destacando seus principais atrativos e diferenciais para os moradores.",
-  ];
-  const amenities = condominiumData?.amenities || defaultAmenities;
+
+  const rawParagraphs = condominiumData?.descriptionParagraphs;
+  const descriptionParagraphs: string[] = Array.isArray(rawParagraphs)
+    ? rawParagraphs.filter((p): p is string => typeof p === "string" && p.trim().length > 0)
+    : typeof rawParagraphs === "string" && (rawParagraphs as string).trim().length > 0
+      ? [rawParagraphs as string]
+      : [
+          "Descrição padrão do condomínio, destacando seus principais atrativos e diferenciais para os moradores.",
+        ];
+
+  const rawAmenities = Array.isArray(condominiumData?.amenities)
+    ? condominiumData.amenities
+    : defaultAmenities;
+  const amenities = rawAmenities.filter(Boolean).map((amenity) => ({
+    icon: typeof amenity?.icon === "string" ? amenity.icon : "shield",
+    label: typeof amenity?.label === "string" ? amenity.label : "",
+  }));
 
   // Adicionar o estado e a lógica para o carrossel
   const [carouselIndex, setCarouselIndex] = useState(0);
 
   const nextCarousel = () => {
+    if (amenities.length === 0) return;
     setCarouselIndex((prev) => (prev + 1) % amenities.length);
   };
 
   const prevCarousel = () => {
+    if (amenities.length === 0) return;
     setCarouselIndex((prev) => (prev - 1 + amenities.length) % amenities.length);
   };
 

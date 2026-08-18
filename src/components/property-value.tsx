@@ -14,7 +14,15 @@ export default function PropertyValue({ investmentData }: PropertyValueProps) {
     document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const priceFormatted = investmentData?.priceFormatted || "R$ 850.000";
+  const priceFormatted =
+    investmentData?.priceFormatted ||
+    (investmentData?.price
+      ? new Intl.NumberFormat("pt-BR", {
+          style: "currency",
+          currency: "BRL",
+          maximumFractionDigits: 0,
+        }).format(investmentData.price)
+      : "R$ 850.000");
   const conditions =
     investmentData?.conditions || "À vista. Aceita financiamento bancário e parcelamento direto.";
 

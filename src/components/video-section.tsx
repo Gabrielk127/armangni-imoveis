@@ -39,14 +39,19 @@ export default function VideoSection({
   };
 
   // Converter URL do YouTube se necessário
-  const getEmbedUrl = (url: string) => {
-    if (url.includes("youtube.com/watch?v=")) {
-      const videoId = url.split("v=")[1]?.split("&")[0];
-      return `https://www.youtube.com/embed/${videoId}`;
-    }
-    if (url.includes("youtu.be/")) {
-      const videoId = url.split("youtu.be/")[1]?.split("?")[0];
-      return `https://www.youtube.com/embed/${videoId}`;
+  const getEmbedUrl = (url?: string) => {
+    if (!url || typeof url !== "string") return "https://www.youtube.com/embed/13eja_RYimU";
+    try {
+      if (url.includes("youtube.com/watch?v=")) {
+        const videoId = url.split("v=")[1]?.split("&")[0];
+        return videoId ? `https://www.youtube.com/embed/${videoId}` : url;
+      }
+      if (url.includes("youtu.be/")) {
+        const videoId = url.split("youtu.be/")[1]?.split("?")[0];
+        return videoId ? `https://www.youtube.com/embed/${videoId}` : url;
+      }
+    } catch {
+      return url;
     }
     return url;
   };
